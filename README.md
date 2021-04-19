@@ -1,4 +1,5 @@
 # Web Design & Development 1
+
 ## E-Comm Webstore: PART 2
 
 ### Outline
@@ -21,3 +22,8 @@ Read and complete the steps in the following two documents:
 
 - This project is based on smart grocery powered by AI.
 - Project highlights the standard grocery features. AI features are not yet implemented.
+
+### Test Results
+
+- Lighthouse - Path: img/test_results/lighthouse.png
+- W3C - Path: img/test_results/
