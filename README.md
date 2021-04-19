@@ -26,4 +26,4 @@ Read and complete the steps in the following two documents:
 ### Test Results
 
 - Lighthouse - Path: img/test_results/lighthouse.png
-- W3C - Path: img/test_results/
+- W3C - Path: img/test_results/W3C.png
