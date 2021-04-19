@@ -1,1 +1,312 @@
-/* Note there a few "reset" styles given in reset.css. Review those before you begin */
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0 1em 1em 1em;
+  background-color: lightslategrey;
+}
+
+/*Handling Responsive behavior using grid and media query*/
+body {
+  display: grid;
+}
+
+.page-header {
+  display: flex;
+  grid-area: header;
+}
+
+.page-header > .logo {
+  display: flex;
+  padding: 1em;
+  background-color: lightgrey;
+}
+
+.page-header > .search {
+  margin-top: 2em;
+  display: flex;
+}
+
+.search-input {
+  height: 2.5em;
+  width: 40em;
+}
+
+.search-button {
+  padding: 0;
+  display: flex;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.my-account {
+  margin-top: 2em;
+  line-height: 0.01em;
+}
+
+.my-cart {
+  margin-top: 2em;
+  margin-right: 2em;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  border-width: 1em;
+  border-color: red;
+  background-color: lightgray;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 40em;
+  margin: 0 auto;
+  grid-gap: 1em;
+  grid-area: gallery;
+}
+
+.gallery > img {
+  max-width: 100%;
+  vertical-align: middle;
+  margin-top: 1em;
+}
+
+.bigimg {
+  grid-column: span 3;
+}
+
+header > nav > ul li {
+  list-style-type: none;
+  display: flex;
+}
+
+.filter-sidebar {
+  display: block;
+}
+
+.summary {
+  grid-area: main;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category {
+  border-color: black;
+  border-width: 0.2em;
+  border-style: solid;
+  padding: 1em;
+  margin: 1em;
+}
+
+.category > img {
+  width: 12em; /* width of container */
+  height: 12em; /* height of container */
+  object-fit: cover;
+}
+
+.products-filter {
+  border-color: black;
+  border-width: 0.2em;
+  border-style: solid;
+  padding: 0.2em;
+}
+
+.filter-sidebar {
+  grid-area: filter;
+}
+
+.filter-list > li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product > header > img {
+  width: 12em; /* width of container */
+  height: 12em; /* height of container */
+  object-fit: cover;
+  border: 5px solid black;
+}
+
+.results {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.filter-results {
+  grid-area: results;
+  margin-left: 1em;
+  border-color: black;
+  border-width: 0.2em;
+  border-style: solid;
+  padding: 0.2em;
+}
+
+.product {
+  margin: 1em;
+  padding: 1em;
+}
+
+.pagination {
+  grid-area: pagination;
+}
+
+.pagination > ol {
+  list-style-type: none;
+  margin: 2em;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.pagination > ol > li {
+  padding-right: 0.2em;
+}
+
+.pagination > p {
+  margin-left: 2em;
+}
+
+.page-footer {
+  grid-area: footer;
+  display: grid;
+  margin: 0.5em;
+}
+
+.page-footer > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.page-footer > ul > li {
+  padding-right: 0.2em;
+}
+
+.page-footer > nav > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.page-footer > nav > ul > li {
+  padding-right: 0.2em;
+}
+
+.social {
+  grid-area: right;
+}
+
+.legal {
+  grid-area: left;
+  margin-left: 0;
+  padding: 0;
+}
+
+.copyright {
+  grid-area: bottom;
+  margin-left: 0;
+  padding: 0;
+}
+
+/*Responsive using grids*/
+/* For big screens*/
+@media screen and (min-width: 600px) {
+  body {
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas:
+      "header  header header"
+      "gallery gallery gallery"
+      "main main main"
+      "filter results results"
+      "pagination pagination pagination"
+      "footer footer footer";
+  }
+
+  .page-footer {
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas:
+      "left left right"
+      "bottom 1 1";
+  }
+}
+
+/*Settings for mobile screens*/
+@media screen and (max-width: 600px) {
+  .page-header {
+    justify-content: space-between;
+  }
+
+  .page-header > .search > label > .search-input {
+    width: 10em;
+  }
+
+  .page-header > .search > label {
+    display: none;
+  }
+
+  .page-header > .my-account > span {
+    display: none;
+  }
+
+  .page-header > .my-cart > span {
+    display: none;
+  }
+
+  .products-filter {
+    width: max-content;
+  }
+
+  .filter-results {
+    grid-area: results;
+    margin-top: 1em;
+    border-color: black;
+    border-width: 0.2em;
+    border-style: solid;
+    padding: 0.2em;
+  }
+
+  body {
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas:
+      "header  header header"
+      "gallery gallery gallery"
+      "main main main"
+      "filter filter filter"
+      "results results results"
+      "pagination pagination pagination"
+      "footer footer footer";
+    margin: 0 0.2em 0.2em 0.2em;
+  }
+
+  .page-footer {
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas:
+      "left left right"
+      "bottom 1 1";
+  }
+}
