@@ -126,3 +126,70 @@ header > nav > ul li {
   object-fit: cover;
 }
 /* main changes (categories shown here) ends here */
+
+/* filter changes starts here */
+.products-filter {
+  border-color: black;
+  border-width: 0.2em;
+  border-style: solid;
+  padding: 0.2em;
+}
+
+.filter-sidebar {
+  grid-area: filter;
+}
+
+.filter-list > li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product > header > img {
+  width: 12em; /* width of container */
+  height: 12em; /* height of container */
+  object-fit: cover;
+  border: 5px solid black;
+}
+
+.results {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.filter-results {
+  grid-area: results;
+  margin-left: 1em;
+  border-color: black;
+  border-width: 0.2em;
+  border-style: solid;
+  padding: 0.2em;
+}
+
+.product {
+  margin: 1em;
+  padding: 1em;
+}
+
+.pagination {
+  grid-area: pagination;
+}
+
+.pagination > ol {
+  list-style-type: none;
+  margin: 2em;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.pagination > ol > li {
+  padding-right: 0.2em;
+}
+
+.pagination > p {
+  margin-left: 2em;
+}
+/* filter changes ends here */

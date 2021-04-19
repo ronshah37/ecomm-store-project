@@ -92,5 +92,208 @@
       </div>
     </main>
 
+    <!-- Filters added here for quick finding of products for users -->
+    <div class="products-filter">
+      <header class="heading">
+        <h1>Filter by</h1>
+      </header>
+
+      <aside class="filter-sidebar">
+        <!-- Filtering product form -->
+        <form class="filters">
+          <div class="filter-options">
+            <fieldset>
+              <legend>Delivery Type</legend>
+              <ul class="filter-list">
+                <li><input type="checkbox" name="delivery" value="two_hours" id="two_hours"> <label for="two_hours">2 Hours Super Delivery</label></li>
+                <li><input type="checkbox" name="delivery" value="one_day" id="one_day"> <label for="one_day">1 Day Delivery</label></li>
+                <li><input type="checkbox" name="delivery" value="two_days" id="two_days"> <label for="two_days">2 Days Delivery</label></li>
+              </ul>
+            </fieldset>
+            <fieldset>
+              <legend>Discounts</legend>
+              <ol class="filter-list">
+                <li><input type="checkbox" name="offers" value="ten_percent" id="ten_percent"> <label for="ten_percent">10%</label></li>
+                <li><input type="checkbox" name="offers" value="twenty_percent" id="twenty_percent"> <label for="twenty_percent">20%</label></li>
+                <li><input type="checkbox" name="offers" value="thirty_percent" id="thirty_percent"> <label for="thirty_percent">30%</label></li>
+                <li><input type="checkbox" name="offers" value="forty_percent" id="forty_percent"> <label for="forty_percent">40%</label></li>
+                <li><input type="checkbox" name="offers" value="fifty_percent" id="fifty_percent"> <label for="fifty_percent">50%</label></li>
+              </ol>
+            </fieldset>
+            <fieldset>
+              <legend>Ratings</legend>
+              <ol class="filter-list">
+                <li>
+                  <input type="radio" name="rating" value="4" id="aboveFour">
+                  <label for="aboveFour">
+                    <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" value="3" id="aboveThree">
+                  <label for="aboveThree">
+                    <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" value="2" id="aboveTwo">
+                  <label for="aboveTwo">
+                    <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" value="1" id="aboveOne">
+                  <label for="aboveOne">
+                    <span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+          </div>
+          <fieldset>
+            <label for="sort">Show</label>
+            <select name="sort" id="sort">
+              <option value="price-high">Price, highest to lowest</option>
+              <option value="price-low">Price, lowest to highest</option>
+              <option value="newest">Newest releases</option>
+            </select>
+          </fieldset>
+        </form>
+      </aside>
+      </div>
+      
+      <div class="filter-results">
+        <header class="heading">
+          <h2>Filter Results</h2>
+        </header>
+      <section class="results">
+          
+        <!-- Product 1 -->
+        <article class="product">
+          <header>
+            <img src="img/products/apples.jpg" alt="Apple Product Image">
+            <h3>Apples</h3>
+            <data value="10"><del>$15.00</del> <ins>$10.00</ins></data>
+            <p>Delicious super gala apples. </p>
+            <dl>
+              <dt>Rating</dt>
+              <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+            </dl>
+            <a href="#">see more</a>
+          </header>
+          <footer>
+            <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
+            <button type="button"><span class="material-icons">favorite</span></button>
+          </footer>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product">
+          <header>
+            <img src="img/products/cauliflower-thumb.jpg" alt="Cauliflower Product Image">
+            <h3>Cauliflower</h3>
+            <data value="7"><del>$9.00</del> <ins>$7.00</ins></data>
+            <p>Fresh Cauliflower!</p>
+            <dl>
+              <dt>Rating</dt>
+              <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+            </dl>
+            <a href="#">see more</a>
+          </header>
+          <footer>
+            <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
+            <button type="button"><span class="material-icons">favorite</span></button>
+          </footer>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product">
+          <header>
+            <img src="img/products/Ivy_gourd.jpg" alt="Ivy Gourd Product Image">
+            <h3>Ivy Gourd</h3>
+            <data value="12"><del>$15.00</del> <ins>$12.00</ins></data>
+            <p>Indian Ivy Gourd</p>
+            <dl>
+              <dt>Rating</dt>
+              <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+            </dl>
+            <a href="#">see more</a>
+          </header>
+          <footer>
+            <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
+            <button type="button"><span class="material-icons">favorite</span></button>
+          </footer>
+        </article>
+  
+        <!-- Product 4 -->
+        <article class="product">
+          <header>
+            <img src="img/products/long_squash.jpg" alt="Long Squasg Product Image">
+            <h3>Long Squash</h3>
+            <data value="6"><del>$9.00</del> <ins>$6.00</ins></data>
+            <p>Fresh Long Squash</p>
+            <dl>
+              <dt>Rating</dt>
+              <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+            </dl>
+            <a href="#">see more</a>
+          </header>
+          <footer>
+            <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
+            <button type="button"><span class="material-icons">favorite</span></button>
+          </footer>
+        </article>
+
+        <!-- Product 5 -->
+        <article class="product">
+          <header>
+            <img src="img/products/mangoes.jpg" alt="Mangoes Product Image">
+            <h3>Mangoes</h3>
+            <data value="45"><del>$50.00</del> <ins>$45.00</ins></data>
+            <p>Delicious Alphonso Mangoes</p>
+            <dl>
+              <dt>Rating</dt>
+              <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+            </dl>
+            <a href="#">see more</a>
+          </header>
+          <footer>
+            <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
+            <button type="button"><span class="material-icons">favorite</span></button>
+          </footer>
+        </article>
+
+        <!-- Product 6 -->
+        <article class="product">
+          <header>
+            <img src="img/products/Oranges.jpg" alt="Orange Product Image">
+            <h3>Oranges</h3>
+            <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
+            <p>Rich in Vitamin C</p>
+            <dl>
+              <dt>Rating</dt>
+              <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+            </dl>
+            <a href="#">see more</a>
+          </header>
+          <footer>
+            <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
+            <button type="button"><span class="material-icons">favorite</span></button>
+          </footer>
+        </article>
+      </section>
+
+      <nav aria-label="Pagination" class="pagination">
+        <p>1-6 of 23 products found</p>
+        <ol class="pages">
+          <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
+          <li><a href="#" aria-label="Page 2">2</a></li>
+          <li><a href="#" aria-label="Page 3">3</a></li>
+          <li><a href="#" aria-label="Page 4">4</a></li>
+          <li><a href="#" aria-label="Page 5">5</a></li>
+        </ol>
+      </nav>
+    </div>
+
   </body>
 </html>
