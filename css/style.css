@@ -193,3 +193,53 @@ header > nav > ul li {
   margin-left: 2em;
 }
 /* filter changes ends here */
+
+/* Footer changes starts here */
+.page-footer {
+  grid-area: footer;
+  display: grid;
+  margin: 0.5em;
+}
+
+.page-footer > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.page-footer > ul > li {
+  padding-right: 0.2em;
+}
+
+.page-footer > nav > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.page-footer > nav > ul > li {
+  padding-right: 0.2em;
+}
+
+.social {
+  grid-area: right;
+}
+
+.legal {
+  grid-area: left;
+  margin-left: 0;
+  padding: 0;
+}
+
+.copyright {
+  grid-area: bottom;
+  margin-left: 0;
+  padding: 0;
+}
+/* Footer changes ends here */
