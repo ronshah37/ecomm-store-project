@@ -70,7 +70,7 @@ body {
 }
 /* Header changes ends here */
 
-/* Gallery changes start here */
+/* Gallery changes starts here */
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -90,3 +90,39 @@ body {
   grid-column: span 3;
 }
 /* Gallery changes ends here */
+
+/* main changes (categories shown here) starts here */
+header > nav > ul li {
+  list-style-type: none;
+  display: flex;
+}
+
+.filter-sidebar {
+  display: block;
+}
+
+.summary {
+  grid-area: main;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category {
+  border-color: black;
+  border-width: 0.2em;
+  border-style: solid;
+  padding: 1em;
+  margin: 1em;
+}
+
+.category > img {
+  width: 12em; /* width of container */
+  height: 12em; /* height of container */
+  object-fit: cover;
+}
+/* main changes (categories shown here) ends here */
