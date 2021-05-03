@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
 /* Initial CSS for default values */
 html {
   box-sizing: border-box;
   overflow-y: scroll;
   --body-color: #b4d962;
   --header-color: #6c8c23;
+  font-family: Roboto, "Times New Roman", Times, serif;
 }
 
 *,
