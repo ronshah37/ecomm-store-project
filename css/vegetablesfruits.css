@@ -1,0 +1,123 @@
+/* Initial CSS for default values */
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  --body-color: #b4d962;
+  --header-color: #6c8c23;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0 1em 1em 1em;
+  /* background-color: var(--body-color); */
+  background-image: linear-gradient(180deg, var(--body-color), white);
+  background-attachment: fixed;
+}
+
+/* Header changes starts here */
+.page-header {
+  display: flex;
+  grid-area: header;
+}
+
+.page-header > .logo {
+  display: flex;
+  padding: 1em;
+  background-color: var(--header-color);
+}
+
+.page-header > .search {
+  margin-top: 2em;
+  display: flex;
+}
+
+.search-input {
+  height: 2.5em;
+  width: 40em;
+}
+
+.search-button {
+  padding: 0;
+  display: flex;
+  width: 2.5em;
+  height: 2.5em;
+}
+
+.my-account {
+  margin-top: 2em;
+  line-height: 0.01em;
+}
+
+.my-cart {
+  margin-top: 2em;
+  margin-right: 2em;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  border-width: 1em;
+  border-color: red;
+  background-color: var(--header-color);
+}
+/* Header changes ends here */
+
+.category,
+.suggested-products {
+  margin-top: 1em;
+  border-color: black;
+  border-width: 0.2em;
+  border-style: solid;
+  padding: 0.2em;
+  width: max-content;
+}
+.results {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product > header > img {
+  width: 12em; /* width of container */
+  height: 12em; /* height of container */
+  object-fit: cover;
+  border: 5px solid black;
+}
+
+.product {
+  margin: 1em;
+  padding: 1em;
+  border: 2px solid darkgreen;
+  box-shadow: 0.4em 0.8em gray;
+}
+
+dd {
+  font-size: 1.5em;
+  padding-left: 0;
+  margin: 0;
+}
+
+.pagination > ol {
+  list-style-type: none;
+  margin: 2em;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.pagination > ol > li {
+  padding-right: 0.2em;
+}
+
+.pagination > p {
+  margin-left: 2em;
+}

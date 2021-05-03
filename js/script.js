@@ -26,27 +26,32 @@ let categories = [
   {
     categoryLabel: 'Vegetables and Fruits',
     altDetailsImage: 'Vegetables and Fruits Category',
-    categoryImagePath: 'img/categories/vegetables-and-fruits-farmers-market.jpg'
+    categoryImagePath: 'img/categories/vegetables-and-fruits-farmers-market.jpg',
+    categoryPageURL: 'VegetablesFruitsCategory.html'
   },
   {
     categoryLabel: 'Bakery and Dairy',
     altDetailsImage: 'Bakery and Dairy Category',
-    categoryImagePath: 'img/categories/bakerycakesdiary-250x250-1.png'
+    categoryImagePath: 'img/categories/bakerycakesdiary-250x250-1.png',
+    categoryPageURL: '#'
   },
   {
     categoryLabel: 'Beauty and Hygiene',
     altDetailsImage: 'Beauty and Hygiene Category',
-    categoryImagePath: 'img/categories/Beauty_and_Hygiene-270x270.jpg'
+    categoryImagePath: 'img/categories/Beauty_and_Hygiene-270x270.jpg',
+    categoryPageURL: '#'
   },
   {
     categoryLabel: 'Cleaning Supplies',
     altDetailsImage: 'Cleaning Supplies Category',
-    categoryImagePath: 'img/categories/cleaning-supplies-kit.jpg'
+    categoryImagePath: 'img/categories/cleaning-supplies-kit.jpg',
+    categoryPageURL: '#'
   },
   {
     categoryLabel: 'Click here for all categories...',
     altDetailsImage: 'All Categories',
-    categoryImagePath: 'img/categories/arrow.jpg'
+    categoryImagePath: 'img/categories/arrow.jpg',
+    categoryPageURL: '#'
   }
 ];
 
@@ -57,10 +62,12 @@ categories.forEach((category) => {
     let newCategoryElement = document.createElement(`div`);
     newCategoryElement.classList.add(`category`);
     newCategoryElement.innerHTML = `
-    <img src="${category.categoryImagePath}" alt="${category.altDetailsImage}">
-          <br>
-          <span>${category.categoryLabel}</span>
-          <!-- Ratings  -->
+    <a href="${category.categoryPageURL}">
+      <img src="${category.categoryImagePath}" alt="${category.altDetailsImage}">
+      <br>
+      <span>${category.categoryLabel}</span>
+    </a>  
+    <!-- Ratings  -->
     `
     categoriesDiv.appendChild(newCategoryElement);
 });

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastGrocery - Vegetables Fruits Category</title>
+    <meta name="description" content="Vegetables and Fruits Section.">
+    <meta name="author" content="Ronak Shah">
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/vegetablesfruits.css">
+  </head>
+
+  <body>
+    <header class="page-header">
+      <!-- Logo -->
+      <a href="index.html" class="logo"> <img src="img/logo/logo.png" alt="Fast Grocery Logo"><!-- Site logo --></a>
+
+      <!-- Search for a product (non-functional) -->
+      <div class="search">
+        <label>Search
+          <input class="search-input" type="search" name="find" id="find">
+        </label>
+        <button type="button" class="search-button"><span class="material-icons">search</span></button>
+      </div>
+
+      <div class="my-account">
+        <span>My Account <br>Login / Sign Up</span>
+        <!-- My Account | Login | Sign Up -->
+        <button type="button" class="nav-toggle">
+          <span class="material-icons">menu</span>
+        </button>
+      </div>
+      
+
+      <div class="my-cart">
+        <img src="img/cart.png" alt="Fast Grocery Short Logo">
+        <span>My Cart</span>
+      </div>
+      <!-- Checkout Cart -->
+      <!-- Navigation menu and toggle button (non-functional) -->
+    </header>
+
+    <div id="VFCategory"  class="category">
+      <header class="heading">
+        <h2>Vegetables and Fruits Category</h2>
+      </header>
+      <section id="VFCategoryProducts" class="results">
+          <!-- Results will be added from Javascript. -->
+      </section>
+
+      <nav aria-label="Pagination" class="pagination">
+        <p>1-6 of 23 products found</p>
+        <ol class="pages">
+          <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
+          <li><a href="#" aria-label="Page 2">2</a></li>
+          <li><a href="#" aria-label="Page 3">3</a></li>
+          <li><a href="#" aria-label="Page 4">4</a></li>
+          <li><a href="#" aria-label="Page 5">5</a></li>
+        </ol>
+      </nav>
+    </div>
+
+    <div id="suggestedProducts" class="suggested-products">
+      <header class="heading">
+        <h2>Suggested Products</h2>
+      </header>
+      <section id="VFSuggestedProducts"  class="results">
+          <!-- Results will be added from Javascript. -->
+      </section>
+
+      <nav aria-label="Pagination" class="pagination">
+        <p>1-6 of 18 products found</p>
+        <ol class="pages">
+          <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
+          <li><a href="#" aria-label="Page 2">2</a></li>
+          <li><a href="#" aria-label="Page 3">3</a></li>
+        </ol>
+      </nav>
+    </div>
+    <script src="js/VegetablesFruits.js"></script>
+  </body> 
+
+</html>

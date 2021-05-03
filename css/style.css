@@ -2,6 +2,8 @@
 html {
   box-sizing: border-box;
   overflow-y: scroll;
+  --body-color: #b4d962;
+  --header-color: #6c8c23;
 }
 
 *,
@@ -14,7 +16,9 @@ html,
 body {
   height: 100%;
   margin: 0 1em 1em 1em;
-  background-color: lightslategrey;
+  /* background-color: var(--body-color); */
+  background-image: linear-gradient(180deg, var(--body-color), white);
+  background-attachment: fixed;
 }
 
 /*Handling Responsive behavior using grid and media query*/
@@ -31,7 +35,7 @@ body {
 .page-header > .logo {
   display: flex;
   padding: 1em;
-  background-color: lightgrey;
+  background-color: var(--header-color);
 }
 
 .page-header > .search {
@@ -66,7 +70,7 @@ body {
   justify-content: space-between;
   border-width: 1em;
   border-color: red;
-  background-color: lightgray;
+  background-color: var(--header-color);
 }
 /* Header changes ends here */
 
@@ -170,6 +174,14 @@ header > nav > ul li {
 .product {
   margin: 1em;
   padding: 1em;
+  border: 2px solid darkgreen;
+  box-shadow: 0.4em 0.8em gray;
+}
+
+dd {
+  font-size: 1.5em;
+  padding-left: 0;
+  margin: 0;
 }
 
 .pagination {
