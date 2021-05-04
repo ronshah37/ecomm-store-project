@@ -81,7 +81,7 @@ let products = [
     oldPrice: 15.00,
     newPrice: 10.00,
     productDescription: 'Delicious super gala apples.',
-    rating: 4.4
+    rating: 1
   },
   {
     productLabel: 'Cauliflower',
@@ -90,7 +90,7 @@ let products = [
     oldPrice: 9.00,
     newPrice: 7.00,
     productDescription: 'Fresh Cauliflower!',
-    rating: 4.4
+    rating: 2
   },
   {
     productLabel: 'Ivy Gourd',
@@ -99,7 +99,7 @@ let products = [
     oldPrice: 15.00,
     newPrice: 12.00,
     productDescription: 'Indian Ivy Gourd',
-    rating: 4.4
+    rating: 3
   },
   {
     productLabel: 'Long Squash',
@@ -108,7 +108,7 @@ let products = [
     oldPrice: 9.00,
     newPrice: 6.00,
     productDescription: 'Fresh Long Squash',
-    rating: 4.4
+    rating: 4
   },
   {
     productLabel: 'Mangoes',
@@ -117,7 +117,7 @@ let products = [
     oldPrice: 50.00,
     newPrice: 45.00,
     productDescription: 'Delicious Alphonso Mangoes',
-    rating: 4.4
+    rating: 3
   },
   {
     productLabel: 'Oranges',
@@ -126,14 +126,48 @@ let products = [
     oldPrice: 50.00,
     newPrice: 39.00,
     productDescription: 'Rich in Vitamin C',
-    rating: 4.4
+    rating: 4
   }
 ];
 
 //Code to load data of dummy filtered grocery products.
-let filteredResultsDiv = document.querySelector('.results');
+// let filteredResultsDiv = document.querySelector('.results');
 
-products.forEach((product) => {
+// products.forEach((product) => {
+//     let newProductElement = document.createElement(`article`);
+//     newProductElement.classList.add(`product`);
+//     newProductElement.innerHTML = `
+//     <header>
+//       <img src="${product.productImagePath}" alt="${product.altDetailsImage}">
+//       <h3>${product.productLabel}</h3>
+//       <data value="${product.newPrice}"><del>$${product.oldPrice}</del> <ins>$${product.newPrice}</ins></data>
+//       <p>${product.productDescription}</p>
+//       <dl>
+//         <dt>Rating</dt>
+//         <dd>${product.rating} <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+//       </dl>
+//       <a href="#">see more</a>
+//     </header>
+//     <footer>
+//       <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
+//       <button type="button"><span class="material-icons">favorite</span></button>
+//     </footer>
+//     `
+//     filteredResultsDiv.appendChild(newProductElement);
+// });
+
+// let productRatingValue = 4;
+const filteredResultsSection = document.querySelector(`#filteredResults`);
+
+const ratingFilter = document.querySelectorAll(`input[name="rating"]`);
+let selectedRatingValue;
+
+const setProductsInFilterResults = function(inputProducts) {
+
+  // Clear out information that already exists
+  filteredResultsSection.innerHTML = ``;
+
+  inputProducts.forEach((product) => {
     let newProductElement = document.createElement(`article`);
     newProductElement.classList.add(`product`);
     newProductElement.innerHTML = `
@@ -153,5 +187,33 @@ products.forEach((product) => {
       <button type="button"><span class="material-icons">favorite</span></button>
     </footer>
     `
-    filteredResultsDiv.appendChild(newProductElement);
-});
+    filteredResultsSection.appendChild(newProductElement);
+  })
+}
+
+const filterProducts = function() {
+  let filteredProductArray = products.filter(function(product) {
+    return (product.rating == selectedRatingValue)
+  })
+
+  setProductsInFilterResults(filteredProductArray);
+}
+
+if(ratingFilter !== null){
+
+  for (const rating of ratingFilter) {
+    rating.addEventListener("click", function(){
+      selectedRatingValue = rating.value;
+      filterProducts();
+    });
+  }
+}
+
+for (const rating of ratingFilter) {
+    if (rating.checked) {
+        selectedRatingValue = rating.value;
+        filterProducts();
+        break;
+    }
+}
+
