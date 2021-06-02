@@ -25,32 +25,56 @@ theGallery.addEventListener(`click`, setThumb)
 let categories = [
   {
     categoryLabel: 'Vegetables and Fruits',
-    altDetailsImage: 'Vegetables and Fruits Category',
-    categoryImagePath: 'img/categories/vegetables-and-fruits-farmers-market.jpg',
+    altDetailsImage: 'Dal, Atta and More Category',
+    categoryImagePath: 'img/categories/01_9.avif',
     categoryPageURL: 'VegetablesFruitsCategory.html'
   },
   {
     categoryLabel: 'Bakery and Dairy',
     altDetailsImage: 'Bakery and Dairy Category',
-    categoryImagePath: 'img/categories/bakerycakesdiary-250x250-1.png',
+    categoryImagePath: 'img/categories/02_6.avif',
     categoryPageURL: '#'
   },
   {
     categoryLabel: 'Beauty and Hygiene',
     altDetailsImage: 'Beauty and Hygiene Category',
-    categoryImagePath: 'img/categories/Beauty_and_Hygiene-270x270.jpg',
+    categoryImagePath: 'img/categories/03_5.avif',
     categoryPageURL: '#'
   },
   {
     categoryLabel: 'Cleaning Supplies',
     altDetailsImage: 'Cleaning Supplies Category',
-    categoryImagePath: 'img/categories/cleaning-supplies-kit.jpg',
+    categoryImagePath: 'img/categories/04_5.avif',
     categoryPageURL: '#'
   },
   {
     categoryLabel: 'Click here for all categories...',
     altDetailsImage: 'All Categories',
-    categoryImagePath: 'img/categories/arrow.jpg',
+    categoryImagePath: 'img/categories/05_1.avif',
+    categoryPageURL: '#'
+  },
+  {
+    categoryLabel: 'Vegetables and Fruits',
+    altDetailsImage: 'Vegetables and Fruits Category',
+    categoryImagePath: 'img/categories/06_1.avif',
+    categoryPageURL: 'VegetablesFruitsCategory.html'
+  },
+  {
+    categoryLabel: 'Bakery and Dairy',
+    altDetailsImage: 'Bakery and Dairy Category',
+    categoryImagePath: 'img/categories/07.avif',
+    categoryPageURL: '#'
+  },
+  {
+    categoryLabel: 'Beauty and Hygiene',
+    altDetailsImage: 'Beauty and Hygiene Category',
+    categoryImagePath: 'img/categories/08_2.avif',
+    categoryPageURL: '#'
+  },
+  {
+    categoryLabel: 'Cleaning Supplies',
+    altDetailsImage: 'Cleaning Supplies Category',
+    categoryImagePath: 'img/categories/09_1.avif',
     categoryPageURL: '#'
   }
 ];
@@ -64,8 +88,7 @@ categories.forEach((category) => {
     newCategoryElement.innerHTML = `
     <a href="${category.categoryPageURL}">
       <img src="${category.categoryImagePath}" alt="${category.altDetailsImage}">
-      <br>
-      <span>${category.categoryLabel}</span>
+      
     </a>  
     <!-- Ratings  -->
     `
@@ -81,7 +104,9 @@ let products = [
     oldPrice: 15.00,
     newPrice: 10.00,
     productDescription: 'Delicious super gala apples.',
-    rating: 1
+    rating: 1,
+    deliveryTypes: [`two_hours`, `one_day`],
+    discount: 'ten_percent'
   },
   {
     productLabel: 'Cauliflower',
@@ -90,7 +115,9 @@ let products = [
     oldPrice: 9.00,
     newPrice: 7.00,
     productDescription: 'Fresh Cauliflower!',
-    rating: 2
+    rating: 2,
+    deliveryTypes: [`two_hours`, `one_day`],
+    discount: 'fifty_percent'
   },
   {
     productLabel: 'Ivy Gourd',
@@ -99,7 +126,9 @@ let products = [
     oldPrice: 15.00,
     newPrice: 12.00,
     productDescription: 'Indian Ivy Gourd',
-    rating: 3
+    rating: 3,
+    deliveryTypes: [`one_day`, `two_days`],
+    discount: 'ten_percent'
   },
   {
     productLabel: 'Long Squash',
@@ -108,7 +137,9 @@ let products = [
     oldPrice: 9.00,
     newPrice: 6.00,
     productDescription: 'Fresh Long Squash',
-    rating: 4
+    rating: 4,
+    deliveryTypes: [`two_hours`, `two_days`],
+    discount: 'thirty_percent'
   },
   {
     productLabel: 'Mangoes',
@@ -117,7 +148,9 @@ let products = [
     oldPrice: 50.00,
     newPrice: 45.00,
     productDescription: 'Delicious Alphonso Mangoes',
-    rating: 3
+    rating: 3,
+    deliveryTypes: [`two_hours`, `one_day`],
+    discount: 'forty_percent'
   },
   {
     productLabel: 'Oranges',
@@ -126,7 +159,9 @@ let products = [
     oldPrice: 50.00,
     newPrice: 39.00,
     productDescription: 'Rich in Vitamin C',
-    rating: 4
+    rating: 4,
+    deliveryTypes: [`two_hours`, `two_days`],
+    discount: 'twenty_percent'
   }
 ];
 
@@ -159,9 +194,6 @@ let products = [
 // let productRatingValue = 4;
 const filteredResultsSection = document.querySelector(`#filteredResults`);
 
-const ratingFilter = document.querySelectorAll(`input[name="rating"]`);
-let selectedRatingValue;
-
 const setProductsInFilterResults = function(inputProducts) {
 
   // Clear out information that already exists
@@ -183,14 +215,35 @@ const setProductsInFilterResults = function(inputProducts) {
       <a href="#">see more</a>
     </header>
     <footer>
-      <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
-      <button type="button"><span class="material-icons">favorite</span></button>
+      <button type="button" class="add-to-cart"> Add to Cart <span class="add-to-cart-sign"> + </span></button>
+      <button type="button" class="favourite">Heart It!!</button>
     </footer>
     `
     filteredResultsSection.appendChild(newProductElement);
   })
 }
 
+const productFilter = {
+  deliveryTypes: [],
+  discounts: [],
+  ratings: 0,
+}
+
+
+//Select Delivery Type filter
+const deliveryTypeFilter = document.getElementById(`deliveryTypeFilter`);
+
+//Select Discounts filter
+const discountsFilter = document.getElementById(`discountsFilter`);
+
+//Select Ratings Filter
+const ratingFilter = document.querySelectorAll(`input[name="rating"]`);
+let selectedRatingValue;
+
+//Select Drop Down
+const sortFilter = document.getElementById(`sortFilter`);
+
+//
 const filterProducts = function() {
   let filteredProductArray = products.filter(function(product) {
     return (product.rating == selectedRatingValue)
@@ -216,4 +269,25 @@ for (const rating of ratingFilter) {
         break;
     }
 }
+//
 
+const filterAndSort = function() {
+  // Do all the filtering, then print the list
+
+  // filter() is a loop that includes/excludes values from an array to build a new array
+  //    If the callback function returns true, the value is added to the new array
+  //    If the callback function returns false, the value is NOT added to the new array
+
+  console.log(productFilter.deliveryTypes.length);
+
+  const filteredProducts = products.filter((product) =>  productFilter.deliveryTypes.length === 0 || 
+                                                      product.deliveryTypes.filter((deliveryType) => productFilter.deliveryTypes.includes(deliveryType)).length > 0)
+                                .filter((product) =>  productFilter.discounts.length === 0 || 
+                                                      product.discount.filter((discount) => productFilter.discounts.includes(discount)).length > 0)
+                                .filter((product) => product.ratings >= productFilter.ratings);
+                                
+
+  // Go build the UI with the new filtered array
+  setProductsInFilterResults(filteredProducts);
+
+}

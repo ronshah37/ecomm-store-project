@@ -61,14 +61,14 @@
     <!-- Filters added here for quick finding of products for users -->
     <div class="products-filter">
       <header class="heading">
-        <h1>Filter by</h1>
+        <h2>Filter by</h2>
       </header>
 
-      <aside class="filter-sidebar">
+      <div class="filter-sidebar">
         <!-- Filtering product form -->
         <form class="filters">
           <div class="filter-options">
-            <fieldset>
+            <fieldset id="deliveryTypeFilter" class="filter-item">
               <legend>Delivery Type</legend>
               <ul class="filter-list">
                 <li><input type="checkbox" name="delivery" value="two_hours" id="two_hours"> <label for="two_hours">2 Hours Super Delivery</label></li>
@@ -76,7 +76,7 @@
                 <li><input type="checkbox" name="delivery" value="two_days" id="two_days"> <label for="two_days">2 Days Delivery</label></li>
               </ul>
             </fieldset>
-            <fieldset>
+            <fieldset id="discountsFilter" class="filter-item">
               <legend>Discounts</legend>
               <ol class="filter-list">
                 <li><input type="checkbox" name="offers" value="ten_percent" id="ten_percent"> <label for="ten_percent">10%</label></li>
@@ -86,7 +86,7 @@
                 <li><input type="checkbox" name="offers" value="fifty_percent" id="fifty_percent"> <label for="fifty_percent">50%</label></li>
               </ol>
             </fieldset>
-            <fieldset>
+            <fieldset id="ratingsFilter" class="filter-item">
               <legend>Ratings</legend>
               <ol class="filter-list">
                 <li>
@@ -115,17 +115,17 @@
                 </li>
               </ol>
             </fieldset>
+            <fieldset id="sortFilter" class="filter-item">
+              <label for="sort">Show</label>
+              <select name="sort" id="sort">
+                <option value="price-high">Price, highest to lowest</option>
+                <option value="price-low">Price, lowest to highest</option>
+                <option value="newest">Newest releases</option>
+              </select>
+            </fieldset>
           </div>
-          <fieldset>
-            <label for="sort">Show</label>
-            <select name="sort" id="sort">
-              <option value="price-high">Price, highest to lowest</option>
-              <option value="price-low">Price, lowest to highest</option>
-              <option value="newest">Newest releases</option>
-            </select>
-          </fieldset>
         </form>
-      </aside>
+      </div>
       </div>
       
       <div class="filter-results">

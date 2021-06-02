@@ -4,8 +4,8 @@
 html {
   box-sizing: border-box;
   overflow-y: scroll;
-  --body-color: #b4d962;
-  --header-color: #6c8c23;
+  --body-color: #ffffff;
+  --header-color: #89c74a;
   font-family: Roboto, "Times New Roman", Times, serif;
   scroll-behavior: smooth;
 }
@@ -121,35 +121,50 @@ header > nav > ul li {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
+  flex-grow: 1;
 }
 
 .category {
-  border-color: black;
+  /* border-color: black;
   border-width: 0.2em;
-  border-style: solid;
-  padding: 1em;
+  border-style: solid; */
+  /* padding: 1em; */
   margin: 1em;
-  background-color: whitesmoke;
+  background-color: white;
 }
 
-.category > img {
-  width: 12em; /* width of container */
-  height: 12em; /* height of container */
+.category > a > img {
+  width: 23em; /* width of container */
+  height: 8em; /* height of container */
   object-fit: cover;
 }
 /* main changes (categories shown here) ends here */
 
 /* filter changes starts here */
+
+.filters {
+  width: 100%;
+}
+
 .products-filter {
-  border-color: black;
-  border-width: 0.2em;
-  border-style: solid;
   padding: 0.2em;
+  width: max-content;
 }
 
 .filter-sidebar {
   grid-area: filter;
+}
+
+.filter-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+}
+
+.filter-item {
+  margin-left: 2em;
+  margin-right: 2em;
 }
 
 .filter-list > li {
@@ -162,7 +177,7 @@ header > nav > ul li {
   width: 12em; /* width of container */
   height: 12em; /* height of container */
   object-fit: cover;
-  border: 5px solid black;
+  border: 0.2em solid darkgrey;
 }
 
 .results {
@@ -173,11 +188,7 @@ header > nav > ul li {
 
 .filter-results {
   grid-area: results;
-  margin-left: 1em;
-  border-color: black;
-  border-width: 0.2em;
-  border-style: solid;
-  padding: 0.2em;
+  margin-top: 1em;
 }
 
 .product {
@@ -185,6 +196,24 @@ header > nav > ul li {
   padding: 1em;
   border: 2px solid darkgreen;
   box-shadow: 0.4em 0.8em gray;
+}
+
+.add-to-cart {
+  background-color: #5af03f;
+  width: 10em;
+  height: 2em;
+}
+
+.add-to-cart-sign {
+  background-color: #1af000;
+  text-align: end;
+  width: 2em;
+  height: 2em;
+}
+
+.favourite {
+  width: 6em;
+  height: 2em;
 }
 
 dd {
@@ -274,7 +303,8 @@ dd {
       "header  header header"
       "gallery gallery gallery"
       "main main main"
-      "filter results results"
+      "filter filter filter"
+      "results results results"
       "pagination pagination pagination"
       "footer footer footer";
   }
