@@ -90,7 +90,7 @@
               <legend>Ratings</legend>
               <ol class="filter-list">
                 <li>
-                  <input type="radio" name="rating" value="4" id="aboveFour" checked>
+                  <input type="radio" name="rating" value="4" id="aboveFour">
                   <label for="aboveFour">
                     <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
                   </label>
@@ -118,9 +118,9 @@
             <fieldset id="sortFilter" class="filter-item">
               <label for="sort">Show</label>
               <select name="sort" id="sort">
+                <option value="">--Please choose an option--</option>
                 <option value="price-high">Price, highest to lowest</option>
                 <option value="price-low">Price, lowest to highest</option>
-                <option value="newest">Newest releases</option>
               </select>
             </fieldset>
           </div>

@@ -106,7 +106,7 @@ let products = [
     productDescription: 'Delicious super gala apples.',
     rating: 1,
     deliveryTypes: [`two_hours`, `one_day`],
-    discount: 'ten_percent'
+    discount: [`ten_percent`]
   },
   {
     productLabel: 'Cauliflower',
@@ -117,7 +117,7 @@ let products = [
     productDescription: 'Fresh Cauliflower!',
     rating: 2,
     deliveryTypes: [`two_hours`, `one_day`],
-    discount: 'fifty_percent'
+    discount: [`fifty_percent`]
   },
   {
     productLabel: 'Ivy Gourd',
@@ -128,7 +128,7 @@ let products = [
     productDescription: 'Indian Ivy Gourd',
     rating: 3,
     deliveryTypes: [`one_day`, `two_days`],
-    discount: 'ten_percent'
+    discount: [`ten_percent`]
   },
   {
     productLabel: 'Long Squash',
@@ -139,7 +139,7 @@ let products = [
     productDescription: 'Fresh Long Squash',
     rating: 4,
     deliveryTypes: [`two_hours`, `two_days`],
-    discount: 'thirty_percent'
+    discount: [`thirty_percent`]
   },
   {
     productLabel: 'Mangoes',
@@ -150,7 +150,7 @@ let products = [
     productDescription: 'Delicious Alphonso Mangoes',
     rating: 3,
     deliveryTypes: [`two_hours`, `one_day`],
-    discount: 'forty_percent'
+    discount: [`forty_percent`]
   },
   {
     productLabel: 'Oranges',
@@ -161,7 +161,7 @@ let products = [
     productDescription: 'Rich in Vitamin C',
     rating: 4,
     deliveryTypes: [`two_hours`, `two_days`],
-    discount: 'twenty_percent'
+    discount: [`twenty_percent`]
   }
 ];
 
@@ -237,57 +237,82 @@ const deliveryTypeFilter = document.getElementById(`deliveryTypeFilter`);
 const discountsFilter = document.getElementById(`discountsFilter`);
 
 //Select Ratings Filter
-const ratingFilter = document.querySelectorAll(`input[name="rating"]`);
-let selectedRatingValue;
+// const ratingFilter = document.querySelectorAll(`input[name="rating"]`);
+const ratingFilter = document.getElementById(`ratingsFilter`);
 
 //Select Drop Down
 const sortFilter = document.getElementById(`sortFilter`);
 
-//
-const filterProducts = function() {
-  let filteredProductArray = products.filter(function(product) {
-    return (product.rating == selectedRatingValue)
-  })
-
-  setProductsInFilterResults(filteredProductArray);
-}
-
-if(ratingFilter !== null){
-
-  for (const rating of ratingFilter) {
-    rating.addEventListener("click", function(){
-      selectedRatingValue = rating.value;
-      filterProducts();
-    });
-  }
-}
-
-for (const rating of ratingFilter) {
-    if (rating.checked) {
-        selectedRatingValue = rating.value;
-        filterProducts();
-        break;
-    }
-}
-//
-
 const filterAndSort = function() {
-  // Do all the filtering, then print the list
+  
+  // console.log(productFilter.deliveryTypes.length);
 
-  // filter() is a loop that includes/excludes values from an array to build a new array
-  //    If the callback function returns true, the value is added to the new array
-  //    If the callback function returns false, the value is NOT added to the new array
-
-  console.log(productFilter.deliveryTypes.length);
-
-  const filteredProducts = products.filter((product) =>  productFilter.deliveryTypes.length === 0 || 
-                                                      product.deliveryTypes.filter((deliveryType) => productFilter.deliveryTypes.includes(deliveryType)).length > 0)
-                                .filter((product) =>  productFilter.discounts.length === 0 || 
-                                                      product.discount.filter((discount) => productFilter.discounts.includes(discount)).length > 0)
-                                .filter((product) => product.ratings >= productFilter.ratings);
+  const filteredProducts =  products.filter((product) =>  
+                          productFilter.deliveryTypes.length === 0 || 
+                          product.deliveryTypes.filter((deliveryType) => 
+                          productFilter.deliveryTypes.includes(deliveryType)).length > 0)
+                          .filter((product) =>  productFilter.discounts.length === 0 || 
+                          product.discount.filter((discount) => 
+                          productFilter.discounts.includes(discount)).length > 0)
+                          .filter((product) => product.rating >= productFilter.ratings);
                                 
+
 
   // Go build the UI with the new filtered array
   setProductsInFilterResults(filteredProducts);
 
 }
+
+deliveryTypeFilter.addEventListener(`change`, function(event) {
+
+  const deliveryTypes = event.target.form.elements[event.target.name]
+
+  // Filter to only the checked ones, then return the "value" of those to an array
+  productFilter.deliveryTypes = [...deliveryTypes]
+                            .filter((deliveryType) => deliveryType.checked)
+                            .map((deliveryType) => deliveryType.value)
+
+  filterAndSort()
+})
+
+
+discountsFilter.addEventListener(`change`, function(event) {
+
+  const discounts = event.target.form.elements[event.target.name]
+
+  // Filter to only the checked ones, then return the "value" of those to an array
+  productFilter.discounts = [...discounts]
+                            .filter((discount) => discount.checked)
+                            .map((discount) => discount.value)
+
+  filterAndSort()
+})
+
+ratingFilter.addEventListener(`change`, function(event) {
+
+  const ratings = event.target.form.elements[event.target.name]
+
+  // Filter to only the checked ones, then return the "value" of those to an array
+  let selectedRating = [...ratings]
+                       .filter((rating) => rating.checked)
+                       .map((rating) => rating.value)
+
+  productFilter.ratings = Number(selectedRating[0]);
+
+  filterAndSort()
+})
+
+sortFilter.addEventListener(`change`, function(event) {
+  
+  if (event.target.value === "price-high") {
+    products.sort(
+      (productOne, productTwo) => productTwo.newPrice - productOne.newPrice
+    );
+  } else if (event.target.value === "price-low") {
+    products.sort(
+      (productOne, productTwo) => productOne.newPrice - productTwo.newPrice
+    );
+  }
+
+  filterAndSort()
+})
