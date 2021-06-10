@@ -316,3 +316,69 @@ sortFilter.addEventListener(`change`, function(event) {
 
   filterAndSort()
 })
+
+// Carousel
+
+const delay = 3000; //ms
+
+const slides = document.querySelector(".slides");
+const slidesCount = slides.childElementCount;
+const maxLeft = (slidesCount - 1) * 100 * -1;
+
+let current = 0;
+
+function changeSlide(next = true) {
+  if (next) {
+    current += current > maxLeft ? -100 : current * -1;
+  } else {
+    current = current < 0 ? current + 100 : maxLeft;
+  }
+
+  slides.style.left = current + "%";
+}
+
+let autoChange = setInterval(changeSlide, delay);
+const restart = function() {
+  clearInterval(autoChange);
+  autoChange = setInterval(changeSlide, delay);
+};
+
+// Controls
+document.querySelector(".next-slide").addEventListener("click", function() {
+  changeSlide();
+  restart();
+});
+
+document.querySelector(".prev-slide").addEventListener("click", function() {
+  changeSlide(false);
+  restart();
+});
+
+
+// Food Info
+
+function getFoodNutritionDetails(event) {
+  foodNutritionDetails.textContent = `Text entered is: ${foodName.value}`;
+
+  fetch(`https://calorieninjas.p.rapidapi.com/v1/nutrition?query=${foodName.value}`, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "01c2356800msh8c67f297587506cp1fdeebjsndd7df528b54e",
+		"x-rapidapi-host": "calorieninjas.p.rapidapi.com"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
+  
+  event.preventDefault();
+}
+
+const foodNutritionForm = document.getElementById(`foodNutritionForm`);
+const foodNutritionDetails = document.getElementById(`foodNutritionDetails`);
+const foodName = document.getElementById(`foodname`);
+foodNutritionForm.addEventListener(`submit`, getFoodNutritionDetails);
+//
