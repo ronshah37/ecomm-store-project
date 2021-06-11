@@ -1,26 +1,3 @@
-
-const bigImg = document.querySelector(`#bigimg`)
-const theGallery = document.querySelector(`#gallery`)
-
-
-const setThumb = function (event) {
-  // target refers to what was under the mouse when this event occurred
-  const whichOne = event.target
-
-  console.log(whichOne.matches(`.thumb`))
-
-  let imgSrc = whichOne.getAttribute(`src`)
-  let imgAlt = whichOne.getAttribute(`alt`)
-
-  // Update the big image's attributes
-  bigImg.setAttribute(`src`, imgSrc)
-  bigImg.setAttribute(`alt`, imgAlt)
-}
-
-// Listen to the entire gallery for a click
-theGallery.addEventListener(`click`, setThumb)
-
-
 // Data for Grocery Categories.
 let categories = [
   {
@@ -164,32 +141,6 @@ let products = [
     discount: [`twenty_percent`]
   }
 ];
-
-//Code to load data of dummy filtered grocery products.
-// let filteredResultsDiv = document.querySelector('.results');
-
-// products.forEach((product) => {
-//     let newProductElement = document.createElement(`article`);
-//     newProductElement.classList.add(`product`);
-//     newProductElement.innerHTML = `
-//     <header>
-//       <img src="${product.productImagePath}" alt="${product.altDetailsImage}">
-//       <h3>${product.productLabel}</h3>
-//       <data value="${product.newPrice}"><del>$${product.oldPrice}</del> <ins>$${product.newPrice}</ins></data>
-//       <p>${product.productDescription}</p>
-//       <dl>
-//         <dt>Rating</dt>
-//         <dd>${product.rating} <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
-//       </dl>
-//       <a href="#">see more</a>
-//     </header>
-//     <footer>
-//       <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
-//       <button type="button"><span class="material-icons">favorite</span></button>
-//     </footer>
-//     `
-//     filteredResultsDiv.appendChild(newProductElement);
-// });
 
 // let productRatingValue = 4;
 const filteredResultsSection = document.querySelector(`#filteredResults`);
@@ -357,9 +308,31 @@ document.querySelector(".prev-slide").addEventListener("click", function() {
 
 // Food Info
 
-function getFoodNutritionDetails(event) {
-  foodNutritionDetails.textContent = `Text entered is: ${foodName.value}`;
+const setNutritionInfo = function( nutritionInfo) {
 
+  // Clear out information that already exists
+  foodNutritionDetails.innerHTML = ``;
+  //
+  let newNutritionHeader = document.createElement(`header`);
+  newNutritionHeader.innerHTML = `<p>Food Nutritional values for <strong> ${nutritionInfo["name"].toUpperCase()} ( per ${nutritionInfo["serving_size_g"]} g) </strong> are as follows:</p>`
+  foodNutritionDetails.appendChild(newNutritionHeader);
+
+  for (const property in nutritionInfo) {
+    //
+    if(property === "name" || property === "serving_size_g") {
+      //skip
+    } else {
+      let newNutritionElement = document.createElement(`div`);
+      newNutritionElement.classList.add(`nutrition-info-element`);
+      newNutritionElement.innerHTML = `<p>${property}: ${nutritionInfo[property]}</p>`
+      foodNutritionDetails.appendChild(newNutritionElement);
+    }    
+  }
+    
+}
+
+function getFoodNutritionDetails(event) {
+  //
   fetch(`https://calorieninjas.p.rapidapi.com/v1/nutrition?query=${foodName.value}`, {
 	"method": "GET",
 	"headers": {
@@ -367,8 +340,19 @@ function getFoodNutritionDetails(event) {
 		"x-rapidapi-host": "calorieninjas.p.rapidapi.com"
 	}
 })
-.then(response => {
-	console.log(response);
+.then((response) => response.json())
+.then((response) => {
+  //
+  if(response !== null && response != undefined) {
+    if(response.items !== null && response.items != undefined && response.items.length > 0) {
+      setNutritionInfo(response.items[0]);
+    } else {
+      foodNutritionDetails.innerHTML = `<p>Please check the input again. If input is correct, then the information is currently not available.</p>`;
+    }
+  } else {
+    foodNutritionDetails.innerHTML = `<p>Please check the input again. If input is correct, then the information is currently not available.</p>`;
+  }
+	
 })
 .catch(err => {
 	console.error(err);
@@ -377,8 +361,41 @@ function getFoodNutritionDetails(event) {
   event.preventDefault();
 }
 
+
+function resetFoodInfo() {
+  foodNutritionForm.reset();
+  // Clear out information that already exists
+  foodNutritionDetails.innerHTML = ``;
+}
+
 const foodNutritionForm = document.getElementById(`foodNutritionForm`);
 const foodNutritionDetails = document.getElementById(`foodNutritionDetails`);
 const foodName = document.getElementById(`foodname`);
 foodNutritionForm.addEventListener(`submit`, getFoodNutritionDetails);
 //
+
+//
+function getFunFact() {
+  fetch("https://facts-by-api-ninjas.p.rapidapi.com/v1/facts?limit=1", {
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-key": "01c2356800msh8c67f297587506cp1fdeebjsndd7df528b54e",
+      "x-rapidapi-host": "facts-by-api-ninjas.p.rapidapi.com"
+    }
+  })
+  .then((response) => response.json())
+  .then((response) => {
+    //
+    if(response !== null && response != undefined && response.length > 0) {
+      funFactValue.textContent = `${response[0].fact}`;
+    } else {
+      funFactValue.textContent = `An apple a day keeps doctor away.`;
+    }
+  })
+  .catch(err => {
+    console.error(err);
+  });
+}
+
+const funFactValue = document.getElementById(`funFactValue`);
+getFunFact();
