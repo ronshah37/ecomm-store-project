@@ -83,7 +83,9 @@ let products = [
     productDescription: 'Delicious super gala apples.',
     rating: 1,
     deliveryTypes: [`two_hours`, `one_day`],
-    discount: [`ten_percent`]
+    discount: [`ten_percent`],
+    favoriteClass: `selected-favorite`,
+    favoriteContent: `favorite`
   },
   {
     productLabel: 'Cauliflower',
@@ -94,7 +96,9 @@ let products = [
     productDescription: 'Fresh Cauliflower!',
     rating: 2,
     deliveryTypes: [`two_hours`, `one_day`],
-    discount: [`fifty_percent`]
+    discount: [`fifty_percent`],
+    favoriteClass: `selected-favorite`,
+    favoriteContent: `favorite`
   },
   {
     productLabel: 'Ivy Gourd',
@@ -105,7 +109,10 @@ let products = [
     productDescription: 'Indian Ivy Gourd',
     rating: 3,
     deliveryTypes: [`one_day`, `two_days`],
-    discount: [`ten_percent`]
+    discount: [`ten_percent`],
+    favoriteClass: `unselected-favorite`,
+    favoriteContent: `favorite_border`
+
   },
   {
     productLabel: 'Long Squash',
@@ -116,7 +123,9 @@ let products = [
     productDescription: 'Fresh Long Squash',
     rating: 4,
     deliveryTypes: [`two_hours`, `two_days`],
-    discount: [`thirty_percent`]
+    discount: [`thirty_percent`],
+    favoriteClass: `unselected-favorite`,
+    favoriteContent: `favorite_border`
   },
   {
     productLabel: 'Mangoes',
@@ -127,7 +136,9 @@ let products = [
     productDescription: 'Delicious Alphonso Mangoes',
     rating: 3,
     deliveryTypes: [`two_hours`, `one_day`],
-    discount: [`forty_percent`]
+    discount: [`forty_percent`],
+    favoriteClass: `selected-favorite`,
+    favoriteContent: `favorite`
   },
   {
     productLabel: 'Oranges',
@@ -138,11 +149,56 @@ let products = [
     productDescription: 'Rich in Vitamin C',
     rating: 4,
     deliveryTypes: [`two_hours`, `two_days`],
-    discount: [`twenty_percent`]
+    discount: [`twenty_percent`],
+    favoriteClass: `selected-favorite`,
+    favoriteContent: `favorite`
   }
 ];
 
-// let productRatingValue = 4;
+const fullStar = `<span class="material-icons rating-star"> star </span>`;
+const starBorder = `<span class="material-icons rating-star"> star_border </span>`;
+const halfStar = `<span class="material-icons rating-star"> star_half </span>`;
+let starsMap = new Map();
+
+function getStarString(ratings) {
+  let index = 0;
+  let stars = [];
+
+  if (starsMap.get(ratings) !== undefined) {
+    //
+    return starsMap.get(ratings);
+    //
+  } else {
+    //
+    if (Number.isInteger(ratings)) {
+      //
+      for (index = 0; index < ratings; index++) {
+        stars.push(fullStar);
+      }
+      //
+    } else {
+      //
+      for (index = 0; index < Math.floor(ratings); index++) {
+        stars.push(fullStar);
+      }
+      stars.push(halfStar);
+      //
+    }
+
+    for (index = stars.length; index < 5; index++) {
+      stars.push(starBorder);
+    }
+    //
+    let starString = stars.join(``);
+    //
+    starsMap.set(ratings, starString);
+    //
+    return starString;
+  }
+
+  
+}
+
 const filteredResultsSection = document.querySelector(`#filteredResults`);
 
 const setProductsInFilterResults = function(inputProducts) {
@@ -151,23 +207,24 @@ const setProductsInFilterResults = function(inputProducts) {
   filteredResultsSection.innerHTML = ``;
 
   inputProducts.forEach((product) => {
+
+    let starString = getStarString(product.rating);
+
     let newProductElement = document.createElement(`article`);
     newProductElement.classList.add(`product`);
     newProductElement.innerHTML = `
     <header>
       <img src="${product.productImagePath}" alt="${product.altDetailsImage}">
       <h3>${product.productLabel}</h3>
-      <data value="${product.newPrice}"><del>$${product.oldPrice}</del> <ins>$${product.newPrice}</ins></data>
+      <data value="${product.newPrice}"><del>$${product.oldPrice}</del> <span class="new-price"> <ins>$${product.newPrice}</ins> <span> </data>
       <p>${product.productDescription}</p>
       <dl>
-        <dt>Rating</dt>
-        <dd>${product.rating} <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+        <dd> ${starString} </dd>
       </dl>
-      <a href="#">see more</a>
     </header>
-    <footer>
-      <button type="button" class="add-to-cart"> Add to Cart <span class="add-to-cart-sign"> + </span></button>
-      <button type="button" class="favourite">Heart It!!</button>
+    <footer class="product-footer">
+      <button type="button" class="add-to-cart"> Add to Cart </button>
+      <button type="button" class="favorite-button"><span class="material-icons ${product.favoriteClass}">${product.favoriteContent}</span></button>
     </footer>
     `
     filteredResultsSection.appendChild(newProductElement);
@@ -389,7 +446,7 @@ function getFunFact() {
     if(response !== null && response != undefined && response.length > 0) {
       funFactValue.textContent = `${response[0].fact}`;
     } else {
-      funFactValue.textContent = `An apple a day keeps doctor away.`;
+      funFactValue.textContent = `Nintendo 64 console was first released in Japan on June 23, 1996.`;
     }
   })
   .catch(err => {

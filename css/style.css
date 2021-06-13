@@ -5,7 +5,8 @@
 html {
   box-sizing: border-box;
   overflow-y: scroll;
-  --body-color: #ffffff;
+  /* #dcdcdc #f2f0eb*/
+  --body-color: #eeeeee;
   --header-color: #89c74a;
   font-family: Roboto, "Times New Roman", Times, serif;
   scroll-behavior: smooth;
@@ -21,8 +22,7 @@ html,
 body {
   height: 100%;
   margin: 0 1em 1em 1em;
-  /* background-color: var(--body-color); */
-  background-image: linear-gradient(180deg, var(--body-color), white);
+  background-color: var(--body-color);
   background-attachment: fixed;
 }
 
@@ -151,18 +151,21 @@ header > nav > ul li {
   display: flex;
 }
 
-.filter-sidebar {
-  display: block;
-}
-
 .heading {
-  margin: 0;
+  margin: 0.2em;
   padding: 0;
 }
 
 .heading > h1 {
   margin-top: 0.5em;
   margin-bottom: 0;
+}
+
+.summary {
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  margin-top: 0.5em;
 }
 
 .categories {
@@ -193,10 +196,18 @@ header > nav > ul li {
 
 /* filter changes starts here */
 
+.filter-sidebar {
+  display: flex;
+  align-self: flex-start;
+  justify-content: space-evenly;
+}
+
 .filterby-details {
   border: 1px solid #aaa;
   border-radius: 4px;
   padding: 0.5em 0.5em 0;
+  background-color: beige;
+  margin-top: 0.5em;
 }
 
 .filterby-summary {
@@ -214,6 +225,7 @@ header > nav > ul li {
   border-radius: 4px;
   padding: 0.5em 0.5em 0;
   margin-top: 0.5em;
+  background-color: beige;
 }
 
 .filterresults-summary {
@@ -228,6 +240,9 @@ header > nav > ul li {
 
 .filters {
   width: 100%;
+  display: flex;
+  align-self: flex-start;
+  justify-content: space-evenly;
 }
 
 .products-filter {
@@ -236,8 +251,9 @@ header > nav > ul li {
 }
 
 .filter-options {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
+  align-self: flex-start;
+  justify-content: space-evenly;
   width: 100%;
 }
 
@@ -260,18 +276,19 @@ header > nav > ul li {
 
 .checkbox > span {
   color: #34495e;
-  padding: 0.5rem 0.25rem;
+  /* padding: 0.5rem 0.25rem; */
+  margin-left: 0.5em;
 }
 
 .checkbox > input {
-  height: 25px;
-  width: 25px;
+  height: 1em;
+  width: 1em;
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
   border: 1px solid #34495e;
-  border-radius: 4px;
+  border-radius: 0.25em;
   outline: none;
   transition-duration: 0.3s;
   background-color: #41b883;
@@ -289,8 +306,8 @@ header > nav > ul li {
   text-align: center;
   color: #41b883;
   position: absolute;
-  left: 0.7rem;
-  top: 0.2rem;
+  left: 0.35rem;
+  top: 0.055rem;
 }
 
 .checkbox > input:active {
@@ -298,16 +315,19 @@ header > nav > ul li {
 }
 
 .product > header > img {
-  width: 12em; /* width of container */
+  width: 12em; /*width of container */
   height: 12em; /* height of container */
   object-fit: cover;
-  border: 0.2em solid darkgrey;
+  margin-left: auto;
+  margin-right: auto;
+  /* border: 0.2em solid darkgrey; */
 }
 
 .results {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: start;
 }
 
 .filter-results {
@@ -315,28 +335,55 @@ header > nav > ul li {
 }
 
 .product {
-  margin: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding: 1em;
-  border: 2px solid darkgreen;
+  /* border: 2px solid darkgreen; */
   box-shadow: 0.4em 0.8em gray;
+  background-color: white;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+.rating-star {
+  color: gold;
+}
+
+.new-price {
+  font-size: 1.5em;
+  color: peru;
+  font-weight: bold;
 }
 
 .add-to-cart {
-  background-color: #5af03f;
+  background-color: #0bda51;
   width: 10em;
   height: 2em;
+  color: white;
 }
 
-.add-to-cart-sign {
-  background-color: #1af000;
-  text-align: end;
+.product-footer {
+  display: flex;
+  margin-top: 0.5em;
+}
+
+.favorite-button {
+  margin-left: 0.5em;
   width: 2em;
   height: 2em;
+  background-color: white;
+  border-radius: 100%;
+  border-color: red;
 }
 
-.favourite {
-  width: 6em;
-  height: 2em;
+.unselected-favorite {
+  color: red;
+}
+
+.selected-favorite {
+  color: red;
 }
 
 dd {
@@ -402,6 +449,59 @@ dd {
 }
 
 /* Food Nutrition ends */
+
+/* Special offer banner starts */
+
+.special-offer-banner {
+  position: relative;
+  margin-top: 0.5em;
+}
+
+.special-offer-banner:hover .overlay {
+  opacity: 0;
+}
+
+.special-offer-ad {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 25em;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.7); /* Black see-through */
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 1;
+  color: white;
+  text-align: center;
+  height: 25em;
+  position: absolute;
+  bottom: 0.2em;
+  margin: 0;
+  padding: 0;
+}
+
+.special-offer-content {
+  position: absolute;
+  text-align: center;
+  padding: 1em;
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  border: 1px solid #aaa;
+  border-radius: 0.2em;
+  background-color: lightseagreen;
+  box-shadow: 0.2em 0.4em gray;
+}
+
+/* Special offer banner ends */
 
 /* Fun Facts starts */
 
