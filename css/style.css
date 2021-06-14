@@ -170,20 +170,20 @@ header > nav > ul li {
 
 .categories {
   padding: 0;
-  margin: 0;
+  /* margin: 0; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   flex-grow: 1;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .category {
-  /* border-color: black;
-  border-width: 0.2em;
-  border-style: solid; */
-  /* padding: 1em; */
-  margin: 0.5em;
+  padding: 0;
+  margin-left: 1em;
+  margin-right: 1em;
   background-color: white;
 }
 
@@ -268,6 +268,11 @@ header > nav > ul li {
   padding: 0;
 }
 
+.filter-list {
+  padding: 0;
+  margin: 0;
+}
+
 .checkbox {
   display: inline-flex;
   cursor: pointer;
@@ -287,31 +292,31 @@ header > nav > ul li {
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
-  border: 1px solid #34495e;
+  border: 1px solid #647c47;
   border-radius: 0.25em;
   outline: none;
   transition-duration: 0.3s;
-  background-color: #41b883;
+  background-color: #8bc24a;
   cursor: pointer;
 }
 
 .checkbox > input:checked {
-  border: 1px solid #41b883;
-  background-color: #34495e;
+  border: 1px solid #2a612d;
+  background-color: #4bae4f;
 }
 
 .checkbox > input:checked + span::before {
   content: "\2713";
   display: block;
   text-align: center;
-  color: #41b883;
+  color: white;
   position: absolute;
   left: 0.35rem;
   top: 0.055rem;
 }
 
 .checkbox > input:active {
-  border: 2px solid #34495e;
+  border: 2px solid white;
 }
 
 .product > header > img {
@@ -417,6 +422,7 @@ dd {
   border-radius: 4px;
   padding: 0.5em 0.5em 0;
   margin-top: 0.5em;
+  background-color: white;
 }
 
 .foodnutrition-summary {
@@ -518,50 +524,115 @@ dd {
 /* Fun Facts ends */
 
 /* Footer changes starts here */
-.page-footer {
-  display: grid;
-  margin: 0.5em;
-}
 
-.page-footer > ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.page-footer > ul > li {
-  padding-right: 0.2em;
-}
-
-.page-footer > nav > ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
-.page-footer > nav > ul > li {
-  padding-right: 0.2em;
+.container-reserved {
+  display: flex;
+  justify-content: flex-start;
 }
 
-.social {
-  grid-area: right;
-}
-
-.legal {
-  grid-area: left;
-  margin-left: 0;
+.container-reserved a {
   padding: 0;
+  margin: 1em;
 }
 
-.copyright {
-  grid-area: bottom;
-  margin-left: 0;
-  padding: 0;
+.footer-sections {
+  margin-left: 2em;
+  margin-right: 2em;
 }
+
+.footer-about-us {
+  width: 20em;
+}
+
+.page-footer {
+  background-color: #26272b;
+  line-height: 1.5em;
+  color: #737373;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-footer hr {
+  border-top-color: white;
+  opacity: 1;
+}
+
+.page-footer h3 {
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 0.4em;
+  letter-spacing: 0.2em;
+}
+
+.page-footer a {
+  color: #737373;
+}
+
+.page-footer a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.footer-links {
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  display: block;
+}
+
+.footer-links a {
+  color: #737373;
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+  color: #3366cc;
+  text-decoration: none;
+}
+
+.footer-links.inline li {
+  display: inline-block;
+}
+
+.page-footer .social-icons {
+  text-align: left;
+}
+
+.copyright-text {
+  /* margin: auto; */
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.social-icons {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+.social-icons a {
+  display: inline-block;
+  line-height: 3.5em;
+  width: 3.5em;
+  height: 3.5em;
+  text-align: left;
+  margin-right: 0.2em;
+  border-radius: 100%;
+}
+
 /* Footer changes ends here */

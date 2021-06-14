@@ -195,8 +195,6 @@ function getStarString(ratings) {
     //
     return starString;
   }
-
-  
 }
 
 const filteredResultsSection = document.querySelector(`#filteredResults`);
@@ -280,6 +278,8 @@ deliveryTypeFilter.addEventListener(`change`, function(event) {
                             .filter((deliveryType) => deliveryType.checked)
                             .map((deliveryType) => deliveryType.value)
 
+  filterResultsDetails.open = true;
+
   filterAndSort()
 })
 
@@ -292,6 +292,8 @@ discountsFilter.addEventListener(`change`, function(event) {
   productFilter.discounts = [...discounts]
                             .filter((discount) => discount.checked)
                             .map((discount) => discount.value)
+
+  filterResultsDetails.open = true;
 
   filterAndSort()
 })
@@ -306,6 +308,8 @@ ratingFilter.addEventListener(`change`, function(event) {
                        .map((rating) => rating.value)
 
   productFilter.ratings = Number(selectedRating[0]);
+
+  filterResultsDetails.open = true;
 
   filterAndSort()
 })
@@ -322,8 +326,12 @@ sortFilter.addEventListener(`change`, function(event) {
     );
   }
 
+  filterResultsDetails.open = true;
+
   filterAndSort()
 })
+
+const filterResultsDetails = document.getElementById(`filterResultsDetails`);
 
 // Carousel
 

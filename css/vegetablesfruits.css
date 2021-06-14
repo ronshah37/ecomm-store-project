@@ -4,8 +4,8 @@
 html {
   box-sizing: border-box;
   overflow-y: scroll;
-  --body-color: #b4d962;
-  --header-color: #6c8c23;
+  --body-color: #eeeeee;
+  --header-color: #89c74a;
   font-family: Roboto, "Times New Roman", Times, serif;
 }
 
@@ -19,8 +19,7 @@ html,
 body {
   height: 100%;
   margin: 0 1em 1em 1em;
-  /* background-color: var(--body-color); */
-  background-image: linear-gradient(180deg, var(--body-color), white);
+  background-color: var(--body-color);
   background-attachment: fixed;
 }
 
@@ -72,34 +71,41 @@ body {
 }
 /* Header changes ends here */
 
+.heading {
+  margin: 0.2em;
+  padding: 0;
+}
+
 .category,
 .suggested-products {
-  margin-top: 1em;
-  border-color: black;
-  border-width: 0.2em;
-  border-style: solid;
-  padding: 0.2em;
-  width: max-content;
+  padding: 0;
+  margin-left: 1em;
+  margin-right: 1em;
+  background-color: beige;
 }
 .results {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
 }
 
 .product > header > img {
   width: 12em; /* width of container */
   height: 12em; /* height of container */
   object-fit: cover;
-  border: 5px solid black;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .product {
-  margin: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding: 1em;
-  border: 2px solid darkgreen;
   box-shadow: 0.4em 0.8em gray;
+  background-color: white;
 }
 
 dd {
@@ -123,4 +129,43 @@ dd {
 
 .pagination > p {
   margin-left: 2em;
+}
+
+.rating-star {
+  color: gold;
+}
+
+.new-price {
+  font-size: 1.5em;
+  color: peru;
+  font-weight: bold;
+}
+
+.add-to-cart {
+  background-color: #0bda51;
+  width: 10em;
+  height: 2em;
+  color: white;
+}
+
+.favorite-button {
+  margin-left: 0.5em;
+  width: 3em;
+  height: 2em;
+  background-color: white;
+  border-radius: 100%;
+  border-color: red;
+}
+
+.unselected-favorite {
+  color: red;
+}
+
+.selected-favorite {
+  color: red;
+}
+
+.product-footer {
+  display: flex;
+  margin-top: 0.5em;
 }
