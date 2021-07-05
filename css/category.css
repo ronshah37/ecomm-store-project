@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+/* Initial CSS for default values */
+html {
+    box-sizing: border-box;
+    overflow-y: scroll;
+    /* #dcdcdc #f2f0eb*/
+    --body-color: #eeeeee;
+    --header-color: #89c74a;
+    font-family: Roboto, "Times New Roman", Times, serif;
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0 1em 1em 1em;
+    background-color: var(--body-color);
+    background-attachment: fixed;
+}
+
+/*Handling Responsive behavior using grid and media query*/
+
+/* Header changes starts here */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    border-width: 1em;
+    border-color: red;
+    background-color: var(--header-color);
+    height: 5em;
+}
+
+.page-header > .logo {
+    display: flex;
+    padding: 0.5em;
+    background-color: var(--header-color);
+}
+
+.page-header > .search {
+    margin-top: 1.5em;
+    display: flex;
+}
+
+.search-input {
+    height: 2.5em;
+    width: 50em;
+    border: none;
+    background-color: #f5f5f5;
+    padding: 0.5em;
+}
+
+.search-input:hover,
+.search-input:focus {
+    background-color: white;
+}
+
+.search-button {
+    display: flex;
+    width: 2.5em;
+    height: 2.5em;
+    border: none;
+    padding: 0.3em;
+}
+
+.my-account {
+    margin-top: 1.5em;
+    line-height: 0.01em;
+}
+
+.my-cart {
+    margin-top: 1.5em;
+    margin-right: 2em;
+}
+
+.my-cart a {
+    text-decoration: none;
+    color: #13420a;
+}
+
+/* Header changes ends here */
+
+/* Footer changes starts here */
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.container-reserved {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.container-reserved a:nth-child(2) {
+    padding: 0;
+    margin: 1em;
+}
+
+.footer-sections {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.footer-about-us {
+    width: 20em;
+}
+
+.page-footer {
+    background-color: #26272b;
+    line-height: 1.5em;
+    color: #737373;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-footer hr {
+    border-top-color: white;
+    opacity: 1;
+}
+
+.page-footer h3 {
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 0.4em;
+    letter-spacing: 0.2em;
+}
+
+.page-footer a {
+    color: #737373;
+}
+
+.page-footer a:hover {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.footer-links {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-links li {
+    display: block;
+}
+
+.footer-links a {
+    color: #737373;
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.footer-links.inline li {
+    display: inline-block;
+}
+
+.page-footer .social-icons {
+    text-align: left;
+}
+
+.copyright-text {
+    /* margin: auto; */
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.social-icons {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.social-icons a {
+    display: inline-block;
+    line-height: 3.5em;
+    width: 3.5em;
+    height: 3.5em;
+    text-align: left;
+    margin-right: 0.2em;
+    border-radius: 100%;
+}
+
+/* Footer changes ends here */
+
+.category-basic-details-container {
+    padding-top: 2em;
+    text-align: center;
+    max-width: 100em;
+}
+
+.gallery-details-container {
+    margin-top: 0.5em;
+    padding-top: 2em;
+    /* text-align: center; */
+    max-width: 100em;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    background-color: beige;
+}
+
+.gallery {
+    margin-left: 6em;
+    margin-right: 6em;
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+.gallery-img {
+    display: none;
+}
+
+.gallery-img.active {
+    display: block;
+    width: 30em;
+    height: 20em;
+    object-fit: cover;
+}
+
+.gallery-button {
+    background-color: transparent;
+    margin: 1em 0.4em;
+    height: 0.4em;
+    font-size: 1em;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 1px 3px #aa8a59;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.gallery-button.active {
+    background-color: #ff9419;
+}
+
+.gallery-controls {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    list-style: none;
+    bottom: 0;
+}
+
+.category-info {
+    text-align: left;
+    /* padding: 0 2em; */
+}
+
+.rating-star {
+    color: gold;
+}
+
+.category,
+.suggested-products {
+    padding: 0;
+    margin-left: 1em;
+    margin-right: 1em;
+    background-color: beige;
+}
+.results {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.product > header > img {
+    width: 12em; /* width of container */
+    height: 12em; /* height of container */
+    object-fit: cover;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.product {
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    box-shadow: 0.4em 0.8em gray;
+    background-color: white;
+}
+
+dd {
+    font-size: 1.5em;
+    padding-left: 0;
+    margin: 0;
+}
+
+.pagination > ol {
+    list-style-type: none;
+    margin: 2em;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.pagination > ol > li {
+    padding-right: 0.2em;
+}
+
+.pagination > p {
+    margin-left: 2em;
+}
+
+.new-price {
+    font-size: 1.5em;
+    color: peru;
+    font-weight: bold;
+}
+
+.add-to-cart {
+    background-color: #0bda51;
+    width: 10em;
+    height: 2em;
+    color: white;
+}
+
+.favorite-button {
+    margin-left: 0.5em;
+    width: 3em;
+    height: 2em;
+    background-color: white;
+    border-radius: 100%;
+    border-color: red;
+}
+
+.unselected-favorite {
+    color: red;
+}
+
+.selected-favorite {
+    color: red;
+}
+
+@media screen and (min-width: 70em) {
+    .category-basic-details-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 3em;
+        gap: 2em;
+    }
+
+    .category-info {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        padding: 0;
+        /* margin-top: 3em; */
+    }
+}

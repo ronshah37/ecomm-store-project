@@ -1,0 +1,253 @@
+<html id="top" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FastGrocery</title>
+        <meta name="description" content="AI Powered Grocery website." />
+        <meta name="author" content="Ronak Shah" />
+        <!-- <link rel="stylesheet" href="css/reset.css"> -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <link rel="stylesheet" href="css/category.css" />
+    </head>
+    <body>
+        <header class="page-header">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <img
+                    src="img/logo/logo.png"
+                    alt="Fast Grocery Logo"
+                /><!-- Site logo --></a
+            >
+
+            <!-- Search for a product (non-functional) -->
+            <div class="search">
+                <input
+                    class="search-input"
+                    type="search"
+                    name="find"
+                    id="find"
+                    placeholder="Search for products"
+                />
+                <button type="button" class="search-button">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+
+            <div class="my-account">
+                <span>
+                    <a href="login.html" target="_blank"
+                        >My Account <br />Login / Sign Up</a
+                    ></span
+                >
+                <!-- My Account | Login | Sign Up -->
+                <button type="button" class="nav-toggle">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+
+            <div class="my-cart">
+                <a href="#">
+                    <span class="material-icons"> favorite_border </span>
+                </a>
+                <a href="#">
+                    <span class="material-icons shopping-cart">
+                        shopping_cart
+                    </span>
+                </a>
+            </div>
+            <!-- Checkout Cart -->
+            <!-- Navigation menu and toggle button (non-functional) -->
+        </header>
+
+        <main class="">
+            <article class="gallery-details-container">
+                <div class="category-basic-details-container">
+                    <header class="">
+                    <figure class="gallery" id="gallery">
+                      <img src="img/products/apples.jpg" alt="" id="img1" class="gallery-img active" width="100%"></a>
+                      <img src="img/products/cauliflower-thumb.jpg" alt="" id="img2" class="gallery-img" width="100%"></a>
+                      <ol class="gallery-controls" id="controls">
+                        <li><button class="gallery-button active" aria-controls="img1" aria-label="Image 1"></button></li>
+                        <li><button class="gallery-button" aria-controls="img2" aria-label="Image 2"></button></li>
+                      </ol>
+                    </figure>
+                    </header>
+                    <div class="category-info">
+                    <h3>Vegetables and Fruits Category Info</h3>
+                    <p>
+                        We receive good qualities of fruits and vegetables from local vendors. Everything goes through thorough inspection 
+                        to ensure safety of our dear customers. We import vegetables and fruits from different countries to give the customers 
+                        best of the world products. Our products include Super gala apples, Cauliflower, Cabbage, Alphonso mangoes, etc. We also take 
+                        request from customers to provide the products they want. 
+                    </p>
+                    <p>
+                        The average rating for products in this category is
+                        <span
+                            class="
+                                material-icons
+                                rating-star
+                            "
+                            >star</span
+                        ><span
+                            class="
+                                material-icons
+                                rating-star
+                            "
+                            >star</span
+                        ><span
+                            class="
+                                material-icons
+                                rating-star
+                            "
+                            >star</span
+                        ><span
+                            class="
+                                material-icons
+                                rating-star
+                            "
+                            >star</span
+                        ><span
+                            class="
+                                material-icons
+                                rating-star
+                            "
+                            >star_border</span
+                        >
+                    </p>
+
+                    <p>
+                        In case you face any issues/ queries with products from this category, you can contact us at 
+                        <a href="mailto:fruitsvegetablescategory@fastgrocery.com">fruitsvegetablescategory@fastgrocery.com</a>.
+                        
+                    </p>
+                    <p>
+                        For general issues/ queries you can contact us at 
+                        <a href="mailto:general@fastgrocery.com">general@fastgrocery.com</a>.
+                    </p>
+                    </div>
+                </div>
+
+                <div id="VFCategory" class="category">
+                    <header class="heading">
+                        <h2>Vegetables and Fruits Category Products</h2>
+                    </header>
+                    <section id="VFCategoryProducts" class="results">
+                        <!-- Results will be added from Javascript. -->
+                    </section>
+                
+                    <nav aria-label="Pagination" class="pagination">
+                        <p>1-6 of 23 products found</p>
+                        <ol class="pages">
+                        <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
+                        <li><a href="#" aria-label="Page 2">2</a></li>
+                        <li><a href="#" aria-label="Page 3">3</a></li>
+                        <li><a href="#" aria-label="Page 4">4</a></li>
+                        <li><a href="#" aria-label="Page 5">5</a></li>
+                        </ol>
+                    </nav>
+                </div>
+                  
+                <div id="suggestedProducts" class="suggested-products">
+                <header class="heading">
+                    <h2>Suggested Products</h2>
+                </header>
+                <section id="VFSuggestedProducts"  class="results">
+                    <!-- Results will be added from Javascript. -->
+                </section>
+            
+                <nav aria-label="Pagination" class="pagination">
+                    <p>1-6 of 18 products found</p>
+                    <ol class="pages">
+                    <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
+                    <li><a href="#" aria-label="Page 2">2</a></li>
+                    <li><a href="#" aria-label="Page 3">3</a></li>
+                    </ol>
+                </nav>
+                </div>
+            </article>
+        </main>
+
+        <!-- Site footer -->
+        <footer class="page-footer">
+            <div class="container">
+                <div class="footer-sections">
+                    <h3>About</h3>
+                    <p class="footer-about-us">
+                        FastGrocery is an online grocery delivery service. It
+                        was founded in December 2013 and is based out of Mumbai.
+                        As of 2018, the company has raised about $535.5 million
+                        from investors including SoftBank, Tiger Global and
+                        Sequoia Capital.
+                    </p>
+                </div>
+
+                <div class="footer-sections">
+                    <h3>Get started</h3>
+                    <ul class="footer-links">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Sign Up</a></li>
+                        <li><a href="">Offers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-sections">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Sitemap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-sections">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="">FAQs</a></li>
+                        <li><a href="">Help desk</a></li>
+                        <li><a href="">Forums</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-sections">
+                    <h3>Follow us on</h3>
+                    <div class="footer-links">
+                        <ul class="social-icons">
+                            <li>
+                                <a class="" href="#">
+                                    <img
+                                        src="img/social/facebook.svg"
+                                        alt="Facebook Icon"
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a class="" href="#">
+                                    <img
+                                        src="img/social/twitter.svg"
+                                        alt="Twitter Icon"
+                                    />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="">
+                <div class="container-reserved">
+                    <p class="copyright-text">
+                        Copyright &copy; 2021 All Rights Reserved by
+                        <a href="index.html">FastGrocery</a>.
+                    </p>
+                    <a href="#top">Jump to top of page</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/category.js"></script>
+    </body>
+</html>

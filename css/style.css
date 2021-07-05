@@ -44,7 +44,7 @@ body {
 }
 
 .page-header > .search {
-    margin-top: 1em;
+    margin-top: 1.5em;
     display: flex;
 }
 
@@ -70,12 +70,12 @@ body {
 }
 
 .my-account {
-    margin-top: 1em;
+    margin-top: 1.5em;
     line-height: 0.01em;
 }
 
 .my-cart {
-    margin-top: 1em;
+    margin-top: 1.5em;
     margin-right: 2em;
 }
 
@@ -174,7 +174,7 @@ header > nav > ul li {
     margin-bottom: 0;
 }
 
-.summary {
+.category-container {
     background-color: white;
     border: 1px solid #aaa;
     border-radius: 4px;
@@ -215,40 +215,12 @@ header > nav > ul li {
     justify-content: space-evenly;
 }
 
-.filterby-details {
+.filter-details {
     border: 1px solid #aaa;
     border-radius: 4px;
-    padding: 0.5em 0.5em 0;
+    padding: 0.5em;
     background-color: beige;
     margin-top: 0.5em;
-}
-
-.filterby-summary {
-    font-weight: bold;
-    margin: -0.5em -0.5em 0;
-    padding: 0.5em;
-}
-
-.filterby-details[open] {
-    padding: 0.5em;
-}
-
-.filterresults-details {
-    border: 1px solid #aaa;
-    border-radius: 4px;
-    padding: 0.5em 0.5em 0;
-    margin-top: 0.5em;
-    background-color: beige;
-}
-
-.filterresults-summary {
-    font-weight: bold;
-    margin: -0.5em -0.5em 0;
-    padding: 0.5em;
-}
-
-.filterresults-details[open] {
-    padding: 0.5em;
 }
 
 .filters {
@@ -332,6 +304,12 @@ header > nav > ul li {
     border: 2px solid white;
 }
 
+.dropdown {
+    background: lightgrey;
+    outline: none;
+    border-radius: 0.25em;
+}
+
 .product > header > img {
     width: 12em; /*width of container */
     height: 12em; /* height of container */
@@ -389,7 +367,7 @@ header > nav > ul li {
 
 .favorite-button {
     margin-left: 0.5em;
-    width: 2em;
+    width: 3em;
     height: 2em;
     background-color: white;
     border-radius: 100%;
@@ -433,19 +411,9 @@ dd {
 .foodnutrition-details {
     border: 1px solid #aaa;
     border-radius: 4px;
-    padding: 0.5em 0.5em 0;
+    padding: 0.5em;
     margin-top: 0.5em;
     background-color: white;
-}
-
-.foodnutrition-summary {
-    font-weight: bold;
-    margin: -0.5em -0.5em 0;
-    padding: 0.5em;
-}
-
-.foodnutrition-details[open] {
-    padding: 0.5em;
 }
 
 .nutrition-summary {
@@ -464,7 +432,6 @@ dd {
     margin: 0.4em;
     padding: 0.2em;
     text-transform: capitalize;
-    /* font-weight: bold; */
 }
 
 /* Food Nutrition ends */
@@ -550,7 +517,7 @@ dd {
     justify-content: flex-start;
 }
 
-.container-reserved a {
+.container-reserved a:nth-child(2) {
     padding: 0;
     margin: 1em;
 }

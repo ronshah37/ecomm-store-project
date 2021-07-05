@@ -89,404 +89,433 @@
         </div>
 
         <!-- This main area shows different categories available and on click should take to respective page(not functional) -->
-        <main class="summary">
-            <header class="heading">
-                <h1>Shop by Category</h1>
-            </header>
-            <div class="categories">
-                <!-- Add categories using Javascript. -->
+        <main class="">
+            <div class="category-container">
+                <header class="heading">
+                    <h1>Shop by Category</h1>
+                </header>
+                <div class="categories">
+                    <!-- Add categories using Javascript. -->
+                </div>
             </div>
-        </main>
 
-        <!-- Filters added here for quick finding of products for users -->
-        <details class="filterby-details">
-            <summary class="filterby-summary">Filter By</summary>
-            <div class="products-filter">
-                <div class="filter-sidebar">
-                    <!-- Filtering product form -->
-                    <form class="filters">
-                        <div class="filter-options">
-                            <fieldset
-                                id="deliveryTypeFilter"
-                                class="filter-item"
-                            >
-                                <legend>Delivery Type</legend>
-                                <ul class="filter-list">
-                                    <li>
-                                        <label for="two_hours" class="checkbox">
-                                            <input
-                                                type="checkbox"
-                                                name="delivery"
-                                                value="two_hours"
-                                                id="two_hours"
-                                            />
-                                            <span>
-                                                2 Hours Super Delivery
-                                            </span></label
-                                        >
-                                    </li>
-                                    <li>
-                                        <label for="one_day" class="checkbox">
-                                            <input
-                                                type="checkbox"
-                                                name="delivery"
-                                                value="one_day"
-                                                id="one_day"
-                                            />
-                                            <span> 1 Day Delivery </span></label
-                                        >
-                                    </li>
-                                    <li>
-                                        <label for="two_days" class="checkbox">
-                                            <input
-                                                type="checkbox"
-                                                name="delivery"
-                                                value="two_days"
-                                                id="two_days"
-                                            />
-                                            <span>2 Days Delivery</span></label
-                                        >
-                                    </li>
-                                </ul>
-                            </fieldset>
-                            <fieldset id="discountsFilter" class="filter-item">
-                                <legend>Discounts</legend>
-                                <ol class="filter-list">
-                                    <li>
-                                        <label
-                                            for="ten_percent"
-                                            class="checkbox"
-                                        >
-                                            <input
-                                                type="checkbox"
-                                                name="offers"
-                                                value="ten_percent"
-                                                id="ten_percent"
-                                            />
-                                            <span> 10% </span></label
-                                        >
-                                    </li>
-                                    <li>
-                                        <label
-                                            for="twenty_percent"
-                                            class="checkbox"
-                                        >
-                                            <input
-                                                type="checkbox"
-                                                name="offers"
-                                                value="twenty_percent"
-                                                id="twenty_percent"
-                                            />
-                                            <span>20%</span></label
-                                        >
-                                    </li>
-                                    <li>
-                                        <label
-                                            for="thirty_percent"
-                                            class="checkbox"
-                                            ><input
-                                                type="checkbox"
-                                                name="offers"
-                                                value="thirty_percent"
-                                                id="thirty_percent"
-                                            />
-                                            <span>30%</span></label
-                                        >
-                                    </li>
-                                    <li>
-                                        <label
-                                            for="forty_percent"
-                                            class="checkbox"
-                                            ><input
-                                                type="checkbox"
-                                                name="offers"
-                                                value="forty_percent"
-                                                id="forty_percent"
-                                            />
-                                            <span>40%</span></label
-                                        >
-                                    </li>
-                                    <li>
-                                        <label
-                                            for="fifty_percent"
-                                            class="checkbox"
-                                            ><input
-                                                type="checkbox"
-                                                name="offers"
-                                                value="fifty_percent"
-                                                id="fifty_percent"
-                                            />
-                                            <span>50%</span></label
-                                        >
-                                    </li>
-                                </ol>
-                            </fieldset>
-                            <fieldset id="ratingsFilter" class="filter-item">
-                                <legend>Ratings</legend>
-                                <ol class="filter-list">
-                                    <li>
-                                        <label for="aboveFour" class="radiobtn">
+            <!-- Filters added here for quick finding of products for users -->
+            <div class="filter-details">
+                <h2 class="">Filter By</h2>
+                <div class="products-filter">
+                    <div class="filter-sidebar">
+                        <!-- Filtering product form -->
+                        <form class="filters">
+                            <div class="filter-options">
+                                <fieldset
+                                    id="deliveryTypeFilter"
+                                    class="filter-item"
+                                >
+                                    <legend>Delivery Type</legend>
+                                    <ul class="filter-list">
+                                        <li>
+                                            <label
+                                                for="two_hours"
+                                                class="checkbox"
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    name="delivery"
+                                                    value="two_hours"
+                                                    id="two_hours"
+                                                />
+                                                <span>
+                                                    2 Hours Super Delivery
+                                                </span></label
+                                            >
+                                        </li>
+                                        <li>
+                                            <label
+                                                for="one_day"
+                                                class="checkbox"
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    name="delivery"
+                                                    value="one_day"
+                                                    id="one_day"
+                                                />
+                                                <span>
+                                                    1 Day Delivery
+                                                </span></label
+                                            >
+                                        </li>
+                                        <li>
+                                            <label
+                                                for="two_days"
+                                                class="checkbox"
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    name="delivery"
+                                                    value="two_days"
+                                                    id="two_days"
+                                                />
+                                                <span
+                                                    >2 Days Delivery</span
+                                                ></label
+                                            >
+                                        </li>
+                                    </ul>
+                                </fieldset>
+                                <fieldset
+                                    id="discountsFilter"
+                                    class="filter-item"
+                                >
+                                    <legend>Discounts</legend>
+                                    <ol class="filter-list">
+                                        <li>
+                                            <label
+                                                for="ten_percent"
+                                                class="checkbox"
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    name="offers"
+                                                    value="ten_percent"
+                                                    id="ten_percent"
+                                                />
+                                                <span> 10% </span></label
+                                            >
+                                        </li>
+                                        <li>
+                                            <label
+                                                for="twenty_percent"
+                                                class="checkbox"
+                                            >
+                                                <input
+                                                    type="checkbox"
+                                                    name="offers"
+                                                    value="twenty_percent"
+                                                    id="twenty_percent"
+                                                />
+                                                <span>20%</span></label
+                                            >
+                                        </li>
+                                        <li>
+                                            <label
+                                                for="thirty_percent"
+                                                class="checkbox"
+                                                ><input
+                                                    type="checkbox"
+                                                    name="offers"
+                                                    value="thirty_percent"
+                                                    id="thirty_percent"
+                                                />
+                                                <span>30%</span></label
+                                            >
+                                        </li>
+                                        <li>
+                                            <label
+                                                for="forty_percent"
+                                                class="checkbox"
+                                                ><input
+                                                    type="checkbox"
+                                                    name="offers"
+                                                    value="forty_percent"
+                                                    id="forty_percent"
+                                                />
+                                                <span>40%</span></label
+                                            >
+                                        </li>
+                                        <li>
+                                            <label
+                                                for="fifty_percent"
+                                                class="checkbox"
+                                                ><input
+                                                    type="checkbox"
+                                                    name="offers"
+                                                    value="fifty_percent"
+                                                    id="fifty_percent"
+                                                />
+                                                <span>50%</span></label
+                                            >
+                                        </li>
+                                    </ol>
+                                </fieldset>
+                                <fieldset
+                                    id="ratingsFilter"
+                                    class="filter-item"
+                                >
+                                    <legend>Ratings</legend>
+                                    <ol class="filter-list">
+                                        <li>
+                                            <label
+                                                for="aboveFour"
+                                                class="radiobtn"
+                                            >
+                                                <input
+                                                    type="radio"
+                                                    name="rating"
+                                                    value="4"
+                                                    id="aboveFour"
+                                                />
+                                                <span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star_border</span
+                                                >
+                                            </label>
+                                        </li>
+                                        <li>
                                             <input
                                                 type="radio"
                                                 name="rating"
-                                                value="4"
-                                                id="aboveFour"
+                                                value="3"
+                                                id="aboveThree"
                                             />
-                                            <span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star_border</span
-                                            >
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input
-                                            type="radio"
-                                            name="rating"
-                                            value="3"
-                                            id="aboveThree"
-                                        />
-                                        <label for="aboveThree">
-                                            <span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star_border</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star_border</span
-                                            >
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input
-                                            type="radio"
-                                            name="rating"
-                                            value="2"
-                                            id="aboveTwo"
-                                        />
-                                        <label for="aboveTwo">
-                                            <span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star_border</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star_border</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star_border</span
-                                            >
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input
-                                            type="radio"
-                                            name="rating"
-                                            value="1"
-                                            id="aboveOne"
-                                        />
-                                        <label for="aboveOne">
-                                            <span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star_border</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star_border</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star_border</span
-                                            ><span
-                                                class="
-                                                    material-icons
-                                                    rating-star
-                                                "
-                                                >star_border</span
-                                            >
-                                        </label>
-                                    </li>
-                                </ol>
-                            </fieldset>
-                            <fieldset id="sortFilter" class="filter-item">
-                                <legend>Sort</legend>
-                                <label for="sort">Show</label>
-                                <select name="sort" id="sort">
-                                    <option value="">
-                                        --Please choose an option--
-                                    </option>
-                                    <option value="price-high">
-                                        Price, highest to lowest
-                                    </option>
-                                    <option value="price-low">
-                                        Price, lowest to highest
-                                    </option>
-                                </select>
-                            </fieldset>
-                        </div>
-                    </form>
+                                            <label for="aboveThree">
+                                                <span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star_border</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star_border</span
+                                                >
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input
+                                                type="radio"
+                                                name="rating"
+                                                value="2"
+                                                id="aboveTwo"
+                                            />
+                                            <label for="aboveTwo">
+                                                <span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star_border</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star_border</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star_border</span
+                                                >
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input
+                                                type="radio"
+                                                name="rating"
+                                                value="1"
+                                                id="aboveOne"
+                                            />
+                                            <label for="aboveOne">
+                                                <span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star_border</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star_border</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star_border</span
+                                                ><span
+                                                    class="
+                                                        material-icons
+                                                        rating-star
+                                                    "
+                                                    >star_border</span
+                                                >
+                                            </label>
+                                        </li>
+                                    </ol>
+                                </fieldset>
+                                <fieldset id="sortFilter" class="filter-item">
+                                    <legend>Sort</legend>
+                                    <label for="sort">Show</label>
+                                    <select
+                                        class="dropdown"
+                                        name="sort"
+                                        id="sort"
+                                    >
+                                        <option value="">
+                                            --Please choose an option--
+                                        </option>
+                                        <option value="price-high">
+                                            Price, highest to lowest
+                                        </option>
+                                        <option value="price-low">
+                                            Price, lowest to highest
+                                        </option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <h2 class="">Filter Results</h2>
+                <div class="filter-results">
+                    <section id="filteredResults" class="results">
+                        <!-- Results will be added from Javascript. -->
+                    </section>
+
+                    <nav aria-label="Pagination" class="pagination">
+                        <p>1-6 of 23 products found</p>
+                        <ol class="pages">
+                            <li>
+                                <a
+                                    href="#"
+                                    aria-label="Current Page, Page 1"
+                                    aria-current="true"
+                                    >1</a
+                                >
+                            </li>
+                            <li><a href="#" aria-label="Page 2">2</a></li>
+                            <li><a href="#" aria-label="Page 3">3</a></li>
+                            <li><a href="#" aria-label="Page 4">4</a></li>
+                            <li><a href="#" aria-label="Page 5">5</a></li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
-        </details>
 
-        <details id="filterResultsDetails" class="filterresults-details">
-            <summary class="filterresults-summary">Filter Results</summary>
-            <div class="filter-results">
-                <section id="filteredResults" class="results">
-                    <!-- Results will be added from Javascript. -->
-                </section>
+            <div class="foodnutrition-details">
+                <h3 class="">
+                    Search for Nutritional Values and learn more about your food
+                </h3>
+                <div>
+                    <form id="foodNutritionForm">
+                        <label for="foodname">Food name:</label>
+                        <input
+                            type="text"
+                            id="foodname"
+                            name="foodname"
+                            placeholder="Ex. Apple, Banana, Paneer, etc."
+                            maxlength="50"
+                            size="25"
+                        /><br /><br />
+                        <input type="submit" value="Submit" />
+                        <input
+                            type="button"
+                            onclick="resetFoodInfo()"
+                            value="Clear All"
+                        />
+                    </form>
 
-                <nav aria-label="Pagination" class="pagination">
-                    <p>1-6 of 23 products found</p>
-                    <ol class="pages">
-                        <li>
-                            <a
-                                href="#"
-                                aria-label="Current Page, Page 1"
-                                aria-current="true"
-                                >1</a
-                            >
-                        </li>
-                        <li><a href="#" aria-label="Page 2">2</a></li>
-                        <li><a href="#" aria-label="Page 3">3</a></li>
-                        <li><a href="#" aria-label="Page 4">4</a></li>
-                        <li><a href="#" aria-label="Page 5">5</a></li>
-                    </ol>
-                </nav>
+                    <div id="foodNutritionDetails" class="nutrition-summary">
+                        <!-- Nutritional info will be added using Javascript -->
+                    </div>
+                </div>
             </div>
-        </details>
 
-        <details class="foodnutrition-details">
-            <summary class="foodnutrition-summary">
-                Search for Nutritional Values and learn more about your food
-            </summary>
-            <div>
-                <form id="foodNutritionForm">
-                    <label for="foodname">Food name:</label>
-                    <input
-                        type="text"
-                        id="foodname"
-                        name="foodname"
-                        placeholder="Ex. Apple, Banana, Paneer, etc."
-                        maxlength="50"
-                        size="25"
-                    /><br /><br />
-                    <input type="submit" value="Submit" />
+            <div class="special-offer-banner">
+                <img
+                    src="img/ads/HPB-8th-29th-30th-1.webp"
+                    alt="special offer"
+                    class="special-offer-ad"
+                />
+                <div class="overlay">
+                    <p class="special-offer-content">
+                        Special Offer!! Hover to see it. Click to get it.
+                    </p>
+                </div>
+            </div>
+
+            <div class="notecard note">
+                <p>
+                    <strong>Did you know? </strong>
+                    <span id="funFactValue"></span>
                     <input
                         type="button"
-                        onclick="resetFoodInfo()"
-                        value="Clear All"
+                        onclick="getFunFact()"
+                        value="Refresh"
                     />
-                </form>
-
-                <div id="foodNutritionDetails" class="nutrition-summary">
-                    <!-- Nutritional info will be added using Javascript -->
-                </div>
-            </div>
-        </details>
-
-        <div class="special-offer-banner">
-            <img
-                src="img/ads/HPB-8th-29th-30th-1.webp"
-                alt="special offer"
-                class="special-offer-ad"
-            />
-            <div class="overlay">
-                <p class="special-offer-content">
-                    Special Offer!! Hover to see it. Click to get it.
                 </p>
             </div>
-        </div>
-
-        <div class="notecard note">
-            <p>
-                <strong>Did you know? </strong>
-                <span id="funFactValue"></span>
-                <input type="button" onclick="getFunFact()" value="Refresh" />
-            </p>
-        </div>
+        </main>
 
         <!-- Site footer -->
         <footer class="page-footer">
